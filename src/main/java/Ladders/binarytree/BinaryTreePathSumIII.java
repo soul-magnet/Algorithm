@@ -65,28 +65,28 @@ public class BinaryTreePathSumIII {
 	        return result;
 	    }
 	    
-	    public void helper(TreeNode root, List<List<Integer>> result, List<Integer> list, int target) {
+	    public void helper(TreeNode root, List<List<Integer>> result, List<Integer> buffer, int target) {
 	        
 	        if (root == null) {
 	            return;
 	        }
 	        
-	        list.add(root.val);
+	        buffer.add(root.val);
 	        int sum = 0;
-	        for (int i = list.size() - 1; i >= 0; i--) {
-	            sum += list.get(i);
+	        for (int i = buffer.size() - 1; i >= 0; i--) {
+	            sum += buffer.get(i);
 	            if (sum == target) {
-	                List<Integer> res = new ArrayList<>();
-	                for (int j = i; j < list.size(); j++) {
-	                    res.add(list.get(j));
+	                List<Integer>tempRes = new ArrayList<>();
+	                for (int j = i; j < buffer.size(); j++) {
+	                    tempRes.add(buffer.get(j));
 	                }
-	                result.add(res);
+	                result.add(tempRes);
 	            }
 	        }
 	        
-	        helper(root.left, result, list, target);
-	        helper(root.right, result, list, target);
-	        list.remove(list.size() - 1);// this deletes current pathsum and leave all previous sums
+	        helper(root.left, result, buffer, target);
+	        helper(root.right, result, buffer, target);
+	        list.remove(buffer.size() - 1);// this deletes current pathsum and leave all previous sums
 	    }
 	 
 }
