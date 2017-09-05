@@ -19,7 +19,7 @@ Given a binary tree, and target = 5:
 return true, as there exist root-to-leaf path 1->2->2 = 5
 
 */
-
+//this version is under leetcode not in lintcode
 public class BinaryTreePathSum {
 	
 	 /**
