@@ -36,6 +36,22 @@ public class MinimumDepthOfBinaryTree {
         	return minDepth(root.left) + 1;
         return Math.min(minDepth(root.left), minDepth(root.right)) + 1;
     }
+	
+	//recursive -version 2
+	public int minDepth(TreeNode root){
+		if(root == null) return 0;
+		return dfs(root);
+	}
+	
+	public int dfs(TreeNode root){
+		if(root == null) return Integer.MAX_VALUE;
+		
+		//base case: if the root is a leaf
+		if(root.left == nulll && root.right == null) return 1;
+		
+		return Math.min(dfs(root.left), dfs(root.right) + 1);
+			
+	}
     
     /* Non_Recursive Traversal Solution uses the same sequence
      * Corresponding figure BFS, but at the time of first leaf can return the following code 
