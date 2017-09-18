@@ -23,7 +23,7 @@ LCA(5, 6) = 7
 LCA(6, 7) = 7
 
 * Analysis: Compare root with p and q, then decide which way to go.
-* There’s only three cases you need to consider.
+* Thereâ€™s only three cases you need to consider.
  	1.Both nodes are to the left of the tree.
 	2.Both nodes are to the right of the tree.
 	3.One node is on the left while the other is on the right.
@@ -57,33 +57,46 @@ public class LowestCommonAncestor {
      * @param A and B: two nodes in a Binary.
      * @return: Return the least common ancestor(LCA) of the two nodes.
      */
+	//updated iterative solution
+// 	To find the lowest common ancestor, we need to find where is p and q and a way to track their ancestors. 
+// 	A parent pointer for each node found is good for the job. 
+// 	After we found both p and q, we create a set of p's ancestors. 
+// 	Then we travel through q's ancestors, the first one appears in p's is our answer.
 	
-	// Version 1: Traditional Method
-    // Version 2: Divide & Conquer
-	/* Iterative implementation is more efficient as the multiple method call
-	 * overhead is avoided
-	 Node findLCA(Node root, int v1, int v2){
-	 	if(root == null) return null;
-	 	if (v1>root.key && v2>root.key)
-	 		return findLCA(root.right, v1, v2);
-	 	else if (v1 < root.key && v2< root.key)
-	 		return findLCA(root.left,v1, v2);
-	 	else 
-	 		return root;
-	 }
-	 Node findLCAIterative(Node root, int v1, int v2){
-	 	while (root != null){
-	 		if (v1>root.key && v2>root.key)
-	 			root = root.key;
-	 		else if (v1< root.ket && v2<root.key)
-	 			root=root.left;
-	 		else
-	 			return root;
-	 	}
-	 	return root;
-	 }.
-	 * */
+	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode A, TreeNode B) {
+		Map<TreeMap, TreeMap> parent = new HashMap<>();
+		Deque<TreeNode> stack = new ArrayDeque<>();
+		parent.put(root, null);
+		stack.push(root);
+		
+		while(!parent.containsKey(A) || !parent.containsKey(B)){
+			TreeNode node = stack.pop();
+			if(node.left != null){
+				parent.put(node.left, node);
+				stack.push(node.left);
+			}
+			
+			if(node.right != null){
+				parent.put(node.right, node);
+				stack.push(node.right);
+			}
+		}
+		
+		Set<TreeNode> ancestors = new HashSet<>();
+		while(A != null){
+			ancestors.add(A);
+			A = parent.get(A);
+		}
+		
+		while(!ancestors.contains(B)){
+			B = parent.get(B);
+		}
+		
+		return B;
+	}
 	
+	
+	//recursive approach
 	public TreeNode getAncestor(TreeNode root, TreeNode node1, TreeNode node2){
 		if (root == null || root == node1 || root == node2){
 			return root;
@@ -107,5 +120,13 @@ public class LowestCommonAncestor {
 		}
 		
 		return null;
+	}
+	
+	//recursive - elegant :)
+	public TreeNode lowestCommonAncestor(TreeNode root, TreeNode p, TreeNode q){
+		if(root == null || root == p || root == q) return root;
+		TreeNode left = lowestCommonAncestor(root.left, p, q);
+		TreeNode right = lowestCommonAncestor(root.right, p, q);
+		return left == null ? right : right == null ? left : root;
 	}
 }
