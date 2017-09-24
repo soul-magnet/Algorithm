@@ -72,10 +72,10 @@ public class ConvertSortedListToBST {
 		return root;
 	}
 	
-	/*
-	 * static ListNode h;
- 
-	public TreeNode sortedListToBST(ListNode head) {
+	//////////////////////////////////////////////////////////////////////////////
+	//similar approach
+	static ListNode h;
+ 	public TreeNode sortedListToBST(ListNode head) {
 		if (head == null)
 			return null;
  
@@ -113,5 +113,29 @@ public class ConvertSortedListToBST {
 		root.right = right;
  
 		return root;
-	}*/
+	}
+	/////////////////////////////////////////////////////////////////////
+	//consize solution
+	
+	public TreeNode sortedListToBST3(ListNode head){
+		if(head == null) return null;
+		return toBST(head, null);
+	}
+	
+	public TreeNode toBST(ListNode head, ListNode tail){
+		ListNode slow = head;
+		ListNode fast = head;
+		
+		if(head == tail) return null;
+		
+		while(fast != tail && fast.next != tail){
+			fast = fast.next.next;
+			slow = slow.next;
+		}
+		
+		TreeNode thread = new TreeNode(slow.val); //root
+		thread.left = toBST(head, slow);
+		thread.right = toBST(slow.next, tail);
+		return thread;
+	}
 }
