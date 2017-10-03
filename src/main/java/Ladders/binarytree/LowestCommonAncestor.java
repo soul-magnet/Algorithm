@@ -130,3 +130,43 @@ public class LowestCommonAncestor {
 		return left == null ? right : right == null ? left : root;
 	}
 }
+
+// Lowest Common Ancestor is esential calculation when rendering web pages, specifically when computing the Cascadinf Style Sheet(CSS)
+// that is applicapble to a particular Document Object Model(DOM) element.
+
+
+// Lowest Common Ancestor III(Lint Code)
+// Given the root and two nodes in a Binary Tree. Find the lowest common ancestor(LCA) of the two nodes.
+// The lowest common ancestor is the node with largest depth which is the ancestor of both nodes.
+// Return null if LCA does not exist.
+
+//  Notice: node A or node B may not exist in tree.
+//  Tags: LinkedIn Binary Tree LintCode Copyright Facebook
+
+ public TreeNode lowestCommonAncestor3(TreeNode root, TreeNode a, TreeNode b) {
+ 	if(root == null) return root;
+	 
+	if(root.val == a.val && root.val == b.val) return root;
+	 
+	if((root.val == a.val && dfs(root, b)) || (root.val == b.val && dfs(root, a)) return root;
+	    
+	if((dfs(root.left, a) && dfs(root.right, b)) || (dfs(root.right, a) && dfs(root.left, b))) return root;
+	    
+	TreeNode l = lowestCommonAncestor3(root.left, a, b);
+	TreeNode r = lowestCommonAncestor3(root.right, a, b);
+	    
+	if(l != null)
+		return l;
+	    else
+	    	return r;
+ }
+	    
+    private boolean dfs(TreeNode root, TreeNode target){
+	    if(root == null && target == null) return true;
+
+	    if(root == null) return false;
+
+	    if(root.val == target.val) return true;
+
+	    return dfs(root.left,target)||dfs(root.right,target);
+    }
