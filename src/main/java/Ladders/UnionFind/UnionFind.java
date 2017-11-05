@@ -1,4 +1,4 @@
-package UnionFind.Heap;
+package UnionFind;
 
 /**
  * UnionFind/Disjoint Set data structure implementation 
@@ -37,6 +37,8 @@ public class UnionFind {
 			root = id[root];
 		
 		//compress the path leading back to the root
+		//doing this operation is called 'path compression'
+		//and is what gives us amortized time complexity
 		while(p != root){
 			int next = id[p];
 			id[p] = root;
@@ -52,7 +54,43 @@ public class UnionFind {
 		return id[p] = find(id[p]);
 	}*/
 	
+	//return whether or not the elements 'p' and 'q'
+	//are in the same components/set
+	public boolean connected(int p, int q){
+		return find(p) == find(q);
+	}
 	
+	//return the size of the components/set 'p' belongs to
+	public int componentSize(int p){
+		return sz[find(p)];
+	}
+	
+	//return the number of remaining components/sets
+	public int components(){
+		return numComponents;
+	}
+	
+	//unify the components.sets containing elements 'p' and 'q'
+	public void unify(int p, int q){
+		int root1 = find(p);
+		int root2 = find(q);
+		
+		if(root1 == root2) //these elements are already in the same group
+			return;
+		
+		if(sz[root1] < sz[root2]){
+			sz[root2] += sz[root1];
+			id[root1] = root2;
+		}else {
+			sz[root1] += sz[root2];
+			id[root2] = root1;
+		}
+		
+		//sicne the roots found are different we know that 
+		//the number of components/sets has decreased
+		numComponents--;
+		
+	}
 	
 	
 

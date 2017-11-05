@@ -1,4 +1,4 @@
-package UnionFind.Heap;
+package UnionFind;
 
 public class TrappingRainWaterII {
 

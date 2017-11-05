@@ -1,4 +1,4 @@
-package UnionFind.Heap;
+package UnionFind;
 
 import java.util.ArrayList;
 
