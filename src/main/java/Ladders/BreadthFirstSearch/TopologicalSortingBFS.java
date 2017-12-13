@@ -3,7 +3,9 @@ package BreadthFirstSearch;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.LinkedList;
+import java.util.Map;
 import java.util.Queue;
+import java.util.Stack;
 
 import GraphSearch.DirectedGraphNode;
 
@@ -46,7 +48,8 @@ public class TopologicalSortingBFS {
 	/**
      * @param graph: A list of Directed graph node
      * @return: Any topological order for the given graph.
-     */  
+     */
+	//BFS Version 1
 	public ArrayList<DirectedGraphNode> topSort(ArrayList<DirectedGraphNode> graph){
 		ArrayList<DirectedGraphNode> result = new ArrayList<DirectedGraphNode>();
 		
@@ -83,6 +86,44 @@ public class TopologicalSortingBFS {
 				if(map.get(label) == 0){
 					result.add(n);
 					queue.offer(n);
+				}
+			}
+		}
+		
+		return result;
+	}
+	
+	//BFS Version 2
+	public ArrayList<DirectedGraphNode> topSort1(ArrayList<DirectedGraphNode> graph){
+		
+		if(graph == null || graph.size() == 0) return graph;
+		
+		Stack<DirectedGraphNode> stack = new Stack<>();
+		Map<DirectedGraphNode, Integer>map = new HashMap<>();
+		ArrayList<DirectedGraphNode> result = new ArrayList<>();
+		
+		for(DirectedGraphNode vertex : graph){
+			for(DirectedGraphNode neighbor : vertex.neighbors){
+				if(map.containsKey(neighbor))
+					map.put(neighbor, map.get(neighbor)+1);
+				else
+					map.put(neighbor, 1);
+			}
+		}
+		
+		for(DirectedGraphNode vertex: graph){
+			if(!map.containsKey(vertex))
+				stack.push(vertex);
+		}
+		
+		while(!stack.isEmpty()){
+			DirectedGraphNode currentVertex = stack.pop();
+			result.add(currentVertex);
+			for(DirectedGraphNode vertex : currentVertex.neighbors){
+				int indegrees = map.get(vertex) - 1;
+				map.put(vertex, map.get(vertex) - 1);
+				if(indegrees == 0){
+					stack.push(vertex);
 				}
 			}
 		}
