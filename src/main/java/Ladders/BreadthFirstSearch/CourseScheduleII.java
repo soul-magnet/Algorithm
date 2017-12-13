@@ -1,5 +1,10 @@
 package BreadthFirstSearch;
 
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Queue;
+
 /**
  * There are a total of n courses you have to take, labeled from 0 to n - 1.
  * Some courses may have prerequisites, for example to take course 0 
@@ -22,8 +27,44 @@ public class CourseScheduleII {
      * @param prerequisites: a list of prerequisite pairs
      * @return: the course order
      */
-    public int[] findOrder(int numCourses, int[][] prerequisites) {
-        // write your code here
-    }
-    //hello
+	 public int[] findOrder(int numCourses, int[][] prerequisites) {
+         List[] edges = new ArrayList[numCourses];//list of neighbot for each node
+         int[] degree = new int[numCourses];// indegree for each node, if indegree==0 root of tree
+         //init degree and beighor matrix for each node
+         for (int i = 0;i < numCourses; i++)
+             edges[i] = new ArrayList<Integer>();
+
+         for (int i = 0; i < prerequisites.length; i++) {
+             degree[prerequisites[i][0]] ++ ;
+             edges[prerequisites[i][1]].add(prerequisites[i][0]);
+         }
+         //init bfs: enque root of tree
+         Queue queue = new LinkedList();
+         for(int i = 0; i < degree.length; i++){
+             if (degree[i] == 0) {
+                 queue.add(i);
+             }
+         }
+         //bfs: deque root, cut edges
+         int count = 0;
+         int[] order = new int[numCourses];
+         while(!queue.isEmpty()){
+             int course = (int)queue.poll();// deque root
+             order[count] = course;
+             count ++;
+             int n = edges[course].size();
+             for(int i = n - 1; i >= 0 ; i--){
+                 int pointer = (int)edges[course].get(i);
+                 degree[pointer]--;//cut edges
+                 if (degree[pointer] == 0) {
+                     queue.add(pointer);//find new root to enqueue
+                 }
+             }
+         }
+
+         if (count == numCourses)//check circle
+             return order;
+
+         return new int[0];
+     }
 }
