@@ -1,0 +1,106 @@
+package BreadthFirstSearch;
+
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+
+/**
+ * Given a knight in a chess board (a binary matrix with 0 as empty and 1 as barrier) with a source position, 
+ * find the shortest path to a destination position, return the length of the route. 
+ * Return -1 if knight can not reached.
+
+ Notice: source and destination must be empty.
+		 Knight can not enter the barrier.
+
+
+Clarification
+If the knight is at (x, y), he can get to the following positions in one step:
+
+(x + 1, y + 2)
+(x + 1, y - 2)
+(x - 1, y + 2)
+(x - 1, y - 2)
+(x + 2, y + 1)
+(x + 2, y - 1)
+(x - 2, y + 1)
+(x - 2, y - 1)
+Example
+[[0,0,0],
+ [0,0,0],
+ [0,0,0]]
+source = [2, 0] destination = [2, 2] return 2
+
+[[0,1,0],
+ [0,0,0],
+ [0,0,0]]
+source = [2, 0] destination = [2, 2] return 6
+
+[[0,1,0],
+ [0,0,1],
+ [0,0,0]]
+source = [2, 0] destination = [2, 2] return -1
+
+Tags 
+Breadth First Search
+
+*/
+
+/**
+ * Definition for a point.
+ * public class Point {
+ *     public int x, y;
+ *     public Point() { x = 0; y = 0; }
+ *     public Point(int a, int b) { x = a; y = b; }
+ * }
+ */
+
+public class KnightShortestPath {
+	
+	 /**
+     * @param grid a chessboard included 0 (false) and 1 (true)
+     * @param source, destination a point
+     * @return the shortest path
+     */
+public int shortestPath(boolean[][] grid, Point source, Point destination) {
+        
+        int[][] directions = new int[][]{{1,2},{1,-2},{-1,2},{-1,-2},{2,1},{2,-1},{-2,1},{-2,-1}};
+        int m = grid.length;
+        int n = grid[0].length;
+        int result = 0;
+        
+        Queue<Point> queue = new LinkedList<>();
+        HashSet<Point> visited = new HashSet<>();
+        queue.offer(source);
+        
+        while(!queue.isEmpty()){
+           for(int i = 0; i < queue.size(); i++){
+              Point currentPoint = queue.poll();
+               visited.add(currentPoint);
+               int x = currentPoint.x / queue.size();
+               int y = currentPoint.y % queue.size();
+               
+               if(x == destination.x && y == destination.y) return result;
+               
+              /* Point nextPoint = new Point(
+                       point.x + deltaX[direction],
+                       point.y + deltaY[direction]
+               );*/
+               
+               Point nextPoint = new Point();
+               
+               for(int[] dir : directions){
+                   nextPoint.x = x + dir[0];
+                   nextPoint.y = y + dir[1];
+                   if( nextPoint.x < 0 ||  nextPoint.x >= m || nextPoint.y < 0 || nextPoint.y >= n || visited.contains( nextPoint.x * queue.size() + nextPoint.y) || grid[ nextPoint.x][nextPoint.y] != true)
+                	   continue;
+                   queue.offer( nextPoint);
+               }
+               
+           }
+           result++;
+            
+        }
+        return result;
+    }
+
+}
