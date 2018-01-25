@@ -1,3 +1,6 @@
+import java.util.ArrayList;
+import java.util.Collections;
+
 // Given a 2D grid, each cell is either an house 1 or empty 0 (the number zero, one), 
 // find the place to build a post office, the distance that post office to all the house sum is smallest. 
 //   Return the smallest distance. Return -1 if it is not possible.
@@ -17,7 +20,7 @@
 // Tags 
 // Sort Binary Search
 
-public class Solution {
+public class BuildPostOfficeI {
       class Node {
         int x, y ;
         Node(int x, int y){
@@ -59,7 +62,7 @@ public class Solution {
       int result = Integer.MAX_VALUE;
       
       for(int i = 0; i < grid.length; i++){
-        for(int j = 0; j < grid[0].lrngth; j++){
+        for(int j = 0; j < grid[0].length; j++){
           if(grid[i][j] == 0){
               int distanceX = distance(i, x, sumX);
               int distanceY = distance(j, x, sumY);
