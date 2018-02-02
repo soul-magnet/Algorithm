@@ -1,4 +1,27 @@
-package BreadthFirstSearch;
+package main.java.ladders.BreadthFirstSearch;
+/**
+ * 615. Course Schedule - Medium
+
+There are a total of n courses you have to take, labeled from 0 to n - 1.
+Some courses may have prerequisites, for example to take course 0 you have to first take course 1, 
+which is expressed as a pair: [0,1]
+
+Given the total number of courses and a list of prerequisite pairs, is it possible for you to finish all courses?
+
+
+Example
+Given n = 2, prerequisites = [[1,0]]
+Return true
+
+Given n = 2, prerequisites = [[1,0],[0,1]]
+Return false
+
+Tags: Amazon Topological Sort Breadth First Search Apple Zenefits
+
+Related Problems 
+Hard Course Schedule III 20 %
+Medium Course Schedule II 21 %
+Medium Topological Sorting 31 %*/
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -83,7 +106,7 @@ public class CourseSchedule {
 			//4. Each time a vertex is dequeued, conceptually cut this vertex and its outgoing edges from graph.
 			//To do this, update its neighbors' incoming edges numbers by deducting 1.
 			//Add any neighbors whose incoming edges is 0 to the queue.
-			//repeat this step until quee is empty
+			//repeat this step until queue is empty
 			for(int i = 0; i < edges.get(currentVertex).size(); i++){
 				int pointer = edges.get(currentVertex).get(i);
 				indegrees[pointer]--;
@@ -162,6 +185,11 @@ public class CourseSchedule {
 		System.out.println(ins.canFinishBFS(3, tst1));
 		
 		System.out.println(ins.canFinishBFS(2, tst2));
+		
+		System.out.println(ins.canFinish(3, tst1));
+		
+		System.out.println(ins.canFinish(1, tst2));
+		
 	}
 
 }
