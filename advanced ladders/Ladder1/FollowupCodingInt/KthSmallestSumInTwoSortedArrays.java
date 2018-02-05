@@ -1,4 +1,4 @@
-package ladderIFollowupCodingInt;
+package Ladder1.FollowupCodingInt;
 
 import java.util.HashSet;
 import java.util.PriorityQueue;

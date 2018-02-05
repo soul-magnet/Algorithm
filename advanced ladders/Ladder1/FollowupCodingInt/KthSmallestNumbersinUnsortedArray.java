@@ -1,4 +1,4 @@
-package ladderIFollowupCodingInt;
+package Ladder1.FollowupCodingInt;
 
 /** Optional
  * Find the kth smallest numbers in an unsorted integer array.

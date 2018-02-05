@@ -1,4 +1,4 @@
-package DataStructureI;
+package Ladder2.DataStructure_I;
 /**
  * 589. Connecting Graph  - Medium - required
 

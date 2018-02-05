@@ -1,4 +1,4 @@
-package DataStructureI;
+package Ladder2.DataStructure_I;
 /**
  * 
  * 473. Add and Search Word - Medium - required

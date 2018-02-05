@@ -1,4 +1,4 @@
-package DataStructureI;
+package Ladder2.DataStructure_I;
 /**
  * 
  * 432. Find the Weak Connected Component in the Directed Graph - medium - required

@@ -1,4 +1,4 @@
-package DataStructureI;
+package Ladder2.DataStructure_I;
 /**
  * 178. Graph Valid Tree - Medium - required
 

@@ -1,4 +1,4 @@
-package ladderIFollowupCodingInt;
+package Ladder1.FollowupCodingInt;
 
 /** Optional
  * Given an array of integers, find how many pairs in the array such that their sum is less than or 

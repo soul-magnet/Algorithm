@@ -1,4 +1,4 @@
-package DataStructureI;
+package Ladder2.DataStructure_I;
 /**
 132. Word Search II - Hard -Required
 

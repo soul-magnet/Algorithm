@@ -1,4 +1,4 @@
-package DataStructureI;
+package Ladder2.DataStructure_I;
 
 /**590. Connecting Graph II   - Medium - required
  * Given n nodes in a graph labeled from 1 to n. There is no edges in the graph at beginning.

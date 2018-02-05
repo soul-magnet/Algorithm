@@ -1,4 +1,4 @@
-package ladderIFollowupCodingInt;
+package Ladder1.FollowupCodingInt;
 
 import java.util.HashMap;
 import java.util.Map;

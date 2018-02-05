@@ -1,4 +1,4 @@
-package ladderIFollowupCodingInt;
+package Ladder1.FollowupCodingInt;
 
 /**
  * Find K-th largest element in an array.

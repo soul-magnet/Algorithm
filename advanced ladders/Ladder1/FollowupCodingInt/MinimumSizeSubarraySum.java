@@ -1,4 +1,4 @@
-package ladderIFollowupCodingInt;
+package Ladder1.FollowupCodingInt;
 /** Required
  * Given an array of n positive integers and a positive integer s, 
  * find the minimal length of a subarray of which the sum ≥ s. If there isn't one, return -1 instead.
@@ -18,7 +18,7 @@ Related Problems
 public class MinimumSizeSubarraySum {
     /**	two pointer
 
-	 这道题可以用two pointer解，对每一个i,将j向右移，直到sum >= s, 后面的j就不用看了，因为都是positive,所以肯定大于s
+	 这�?�题�?�以用two pointer解，对�?一个i,将j�?��?�移，直到sum >= s, �?��?�的j就�?用看了，因为都是positive,所以肯定大于s
 	 time complexity: O(n) space complexity: O(1)
      * @param nums: an array of integers
      * @param s: an integer

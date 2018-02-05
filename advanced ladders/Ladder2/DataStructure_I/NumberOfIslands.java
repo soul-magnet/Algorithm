@@ -1,4 +1,4 @@
-package DataStructureI;
+package Ladder2.DataStructure_I;
 
 /**
  * 433. Number of Islands - Easy - required

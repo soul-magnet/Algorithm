@@ -1,4 +1,4 @@
-package ladderIFollowupCodingInt;
+package Ladder1.FollowupCodingInt;
 /** Required
  * 384. Longest Substring Without Repeating Characters
  * 
