@@ -1,4 +1,4 @@
-package BreadthFirstSearch;
+package main.java.ladders.BreadthFirstSearch;
 /**
  * 178. Graph Valid Tree - Medium
 
