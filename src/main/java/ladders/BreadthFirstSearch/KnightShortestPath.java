@@ -61,8 +61,48 @@ public class KnightShortestPath {
      * @param source, destination a point
      * @return the shortest path
      */
-public int shortestPath(boolean[][] grid, Point source, Point destination) {
-        
+	/*
+	 * Thoughts: Easy to Understand
+	 * classic BFS traversal
+	 * */
+	
+	public int shortestPath(boolean[][] grid, Point source, Point destination) {
+	  	  if(grid == null || grid.length == 0 || grid[0].length == 0) return -1;
+	  	  
+	  	  //shortest path - now BFS
+	  	  Queue<Point> queue = new LinkedList<>();
+	  	  queue.offer(source);
+	  	  
+	  	    int[] directionX = new int[] {1, 1, -1, -1, 2, 2, -2, -2};
+	        int[] directionY = new int[] {2, -2, 2, -2, 1, -1, 1, -1};
+	        int step = 0;
+	        
+	        while(!queue.isEmpty()) {
+	      	  int size = queue.size();
+	      	  for(int i = 0; i < size; i++) {
+	      		  Point curr = queue.poll();
+	      		  if(curr.x == destination.x && curr.y == destination.y)
+	      			  return step;
+	      		  for(int j = 0; j < 8; j++) {
+	      			  Point next = new Point(curr.x + directionX[j], curr.y + directionY[j]);
+	      			  if(inBound(grid, next) && !grid[next.x][next.y]) {
+	      				  queue.offer(next);
+	      				  grid[next.x][next.y] = true;
+	      			  }
+	      		  }
+	      	  }
+	      	  step++;
+	        }//end of while
+	  	  return -1;
+	  	}
+	    
+	    private boolean inBound(boolean[][]grid, Point pt) {
+	  	  return pt.x >= 0 && pt.x < grid.length &&
+	  			  pt.y >= 0 && pt.y < grid[0].length;
+	    }
+	
+	 //this version isn't working for OJ - will work on this 
+      public int shortestPath1(boolean[][] grid, Point source, Point destination) {
         int[][] directions = new int[][]{{1,2},{1,-2},{-1,2},{-1,-2},{2,1},{2,-1},{-2,1},{-2,-1}};
         int m = grid.length;
         int n = grid[0].length;
@@ -102,5 +142,7 @@ public int shortestPath(boolean[][] grid, Point source, Point destination) {
         }
         return result;
     }
+      
+      
 
 }
