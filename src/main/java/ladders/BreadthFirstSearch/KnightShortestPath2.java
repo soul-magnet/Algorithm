@@ -38,7 +38,7 @@ Related Problems
 Medium Knight Shortest Path 23 %
  * */
 /*
- * Thoughts: Same with the Knight Shortest Path only difference is adding the source point as 0,0
+ * Thoughts: Same with the Knight Shortest Path-I only difference is adding the source point as 0,0
  * and given the directions as 4 instead of 8 used to be
  * */
 public class KnightShortestPath2 {
@@ -46,41 +46,54 @@ public class KnightShortestPath2 {
      * @param grid: a chessboard included 0 and 1
      * @return: the shortest path
      */
-    public int shortestPath2(boolean[][] grid) {
-        // write your code here
-    	if(grid == null || grid.length == 0 || grid[0].length == 0) return -1;
-    	
-    	int[] directionX = {1, -1, 2, -2};
-        int[] directionY = {2, 2, 1, 1};
-    	
-    	Queue<Point> queue = new LinkedList<Point>();
-    	int n = grid.length, m = grid[0].length;
-    	
-    	queue.offer(new Point(0, 0));
-    	int step = 0;
-    	
-    	while(!queue.isEmpty()) {
-    		int size = queue.size();
-    		for(int i = 0; i < size; i++) {
-    			Point curr = queue.poll();
-    			if(curr.x == n-1 && curr.y == m-1)
-    				return step;
-    			for(int j = 0 ; j < 4; j++) {
-    				Point next  = new Point(curr.x + directionX[j], curr.y + directionY[j]);
-    				if(inBound(grid, next) && !grid[next.x][next.y]) {
-    					queue.offer(next);
-    					grid[next.x][next.y] = true;
-    				}
-    			}
-    		}
-    		step++;
-    	}
-    	
-    	return -1;
+	private class Point{
+        int x, y;
+        public Point(int x, int y){
+            this.x = x;
+            this.y = y;
+        }
     }
     
-    private boolean inBound(boolean[][]grid, Point pt) {
-    	return pt.x >= 0 && pt.y < grid.length && pt.y >= 0 && pt.y < grid[]
-    }
+   //BFS Solution
+   public int shortestPath2(boolean[][] grid) {
+       // write your code here
+       
+       if(grid == null || grid.length == 0 || grid[0].length == 0) return -1;
+       
+       int[] directionX = {1, -1, 2, -2};
+       int[] directionY = {2, 2, 1, 1};
+       
+       int n = grid.length;
+       int m = grid[0].length;
+       
+       Queue<Point> queue = new LinkedList<>();
+       queue.offer(new Point(0, 0));
+       
+       int step  = 0;
+       
+       while(!queue.isEmpty()){
+           int size = queue.size();
+           for(int i = 0; i < size; i++){
+               Point curr = queue.poll();
+               if((curr.x == n-1) && (curr.y == m-1))
+                   return step;
+               for(int j = 0; j < 4; j++){
+                   Point next = new Point(curr.x + directionX[j], curr.y + directionY[j]);
+                    if(inBound(grid, next) && !grid[next.x][next.y]){
+                       queue.offer(next);
+                       grid[next.x][next.y] = true;
+                   }
+               }
+           }
+           step++;
+       }
+       return -1;
+   }
+   
+    private boolean inBound(boolean[][] grid, Point pt){
+       return pt.x >= 0 && pt.x < grid.length && pt.y >= 0 && pt.y < grid[0].length;
+   }
+    
+    //DP Solution - To Do
 
 }
