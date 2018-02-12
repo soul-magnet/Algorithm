@@ -1,11 +1,11 @@
-package BreadthFirstSearch;
+package main.java.ladders.BreadthFirstSearch;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
 import java.util.Queue;
 
-import BinarySearch.TreeNode;
+
 
 /**
  * Given a binary tree, return the level order traversal of its nodes' values. 

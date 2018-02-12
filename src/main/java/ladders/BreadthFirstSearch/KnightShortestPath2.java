@@ -46,7 +46,7 @@ public class KnightShortestPath2 {
      * @param grid: a chessboard included 0 and 1
      * @return: the shortest path
      */
-	private class Point{
+	public class Point{
         int x, y;
         public Point(int x, int y){
             this.x = x;

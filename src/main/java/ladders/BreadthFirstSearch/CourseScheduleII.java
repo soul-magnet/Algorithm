@@ -1,4 +1,4 @@
-package BreadthFirstSearch;
+package main.java.ladders.BreadthFirstSearch;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

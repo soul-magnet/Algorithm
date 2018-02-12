@@ -1,4 +1,4 @@
-package BreadthFirstSearch;
+package main.java.ladders.BreadthFirstSearch;
 
 /**
  * 434. Number of Islands II 
