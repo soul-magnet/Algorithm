@@ -1,25 +1,33 @@
-package UnionFind;
+package main.java.ladders.UnionFind;
 
 /**
- * UnionFind/Disjoint Set data structure implementation 
- * This code is an inspired modification of the union find implementation found in 
+ * UnionFind/Disjoint Set data structure implementation.
+ * This code was inspired by the union find implementation found in 
  * 'Algorithms Fourth Edition' by Robert Sedgewick and Kevin Wayne.
- *
- * @author Emine.Topkaya
+ * 
  **/
+
 
 
 public class UnionFind {
 	
+	// The number of elements in this union find
 	private int size;
+	
+	// Used to track the size of each of the component
 	private int[] sz;
+	
+	// id[i] points to the parent of i, if id[i] = i then i is a root node
 	private int[] id;
+	
+	// tracks the number of components in the union find
 	private int numComponents;
 	
 	public UnionFind(int size){
-		if(size <= 0){
-			throw new IllegalArgumentException("Size <= 0 is not allowed");
-		}
+		
+		//make sure there are positive number of elements
+		if(size <= 0) throw new IllegalArgumentException("Size <= 0 is not allowed");
+		
 		
 		this.size = numComponents = size;
 		sz = new int[size];
@@ -31,7 +39,10 @@ public class UnionFind {
 		}
 	}
 	
+	//Find which component/set 'p' be;ongs to, takes amortized constant time.
 	public int find(int p){
+		
+		// Find the root of the component/set
 		int root = p;
 		while(root != id[root])
 			root = id[root];
@@ -48,7 +59,7 @@ public class UnionFind {
 		return root;
 	}
 	
-	//recursivelly
+	//recursively
 	/*public int find(int p){
 		if(p == id[p]) return p;
 		return id[p] = find(id[p]);
@@ -70,8 +81,10 @@ public class UnionFind {
 		return numComponents;
 	}
 	
-	//unify the components.sets containing elements 'p' and 'q'
+	
+	// Unify the components.sets containing elements 'p' and 'q'
 	public void unify(int p, int q){
+		
 		int root1 = find(p);
 		int root2 = find(q);
 		
@@ -86,7 +99,7 @@ public class UnionFind {
 			id[root2] = root1;
 		}
 		
-		//sicne the roots found are different we know that 
+		//since the roots found are different we know that 
 		//the number of components/sets has decreased
 		numComponents--;
 		
