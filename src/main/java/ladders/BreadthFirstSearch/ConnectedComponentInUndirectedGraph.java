@@ -94,7 +94,8 @@ public class ConnectedComponentInUndirectedGraph {
 			 UndirectedGraphNode current = queue.poll();
 			 list.add(current.label);
 			 
-			//must check the neighbor is visited, since each neighbor may connect to each other( circle), 
+			 //must check the neighbor is visited, 
+			 //since each neighbor may connect to each other( circle), 
 			 //we must add the node that is unvisited
 			 for(UndirectedGraphNode neighbor : current.neighbors) {
 				 if(visited.get(neighbor) == false) {
