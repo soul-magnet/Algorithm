@@ -28,6 +28,15 @@ Related Problems
 2- Medium Find the Weak Connected Component in the Directed Graph 26 %
  * */
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.List;
+import java.util.Map;
+import java.util.Queue;
+
 /**
  * Definition for Undirected graph.
  * class UndirectedGraphNode {
@@ -37,7 +46,15 @@ Related Problems
  * };
  */
 public class ConnectedComponentInUndirectedGraph {
-    public class UnionFind<T>{
+	
+	private class UndirectedGraphNode {
+	    int label;
+	    ArrayList<UndirectedGraphNode> neighbors;
+	    UndirectedGraphNode(int x) { label = x; neighbors = new ArrayList<UndirectedGraphNode>(); }
+	  };
+  
+	//Union Find Version  
+    private class UnionFind<T>{
 		Map<T,T> father = new HashMap<T, T>();
 		public UnionFind(List<T> set){
 			for(T crt: set){
@@ -104,22 +121,23 @@ public class ConnectedComponentInUndirectedGraph {
 		}
 		return res1;
 	}
+	
+	//BFS Version - Topological Sort
      public List<List<Integer>> connectedSet1(ArrayList<UndirectedGraphNode> nodes) {
         // Write your code here
         
         int m = nodes.size();
         Map<UndirectedGraphNode, Boolean> visited = new HashMap<>();
         
-       for (UndirectedGraphNode node : nodes){
+       for (UndirectedGraphNode node : nodes)
             visited.put(node, false);
-       }
+       
         
         List<List<Integer>> result = new ArrayList<>();
         
         for (UndirectedGraphNode node : nodes){
-            if (visited.get(node) == false){
+            if (visited.get(node) == false)
                 bfs(node, visited, result);
-            }
         }
         
         return result;
@@ -127,9 +145,7 @@ public class ConnectedComponentInUndirectedGraph {
     
     
     public void bfs(UndirectedGraphNode node, Map<UndirectedGraphNode, Boolean> visited, List<List<Integer>> result){
-        
-        
-		List<Integer> list = new ArrayList<Integer>();
+        List<Integer> list = new ArrayList<Integer>();
 		Queue<UndirectedGraphNode> queue = new LinkedList<UndirectedGraphNode>();
 		queue.offer(node);
 		visited.put(node, true);
