@@ -46,121 +46,66 @@ public class GraphValidTree {
 	 * Find - Find the node belongs to the collection number
 	 * */
 	
-//	class UnionFind{
-//		HashMap<Integer, Integer>father = new HashMap<Integer, Integer>();
-//		
-//		UnionFind(int n){
-//			for(int i=0; i<n; i++) {
-//				father.put(i, i);
-//			}
-//		}
-//		
-//		// Find the root of the component/set
-//		int find(int p) {
-//			int root = p;
-//			while(root != father.get(root))
-//				root = father.get(root);
-//			
-//			//compress the path leading back to the root
-//			//doing this operation is called 'path compression'
-//			//and is what gives us amortized time complexity
-//			while(p != father.get(root)){
-//				int next = root;
-//				root = father.get(root);
-//				father.put(next, root);
-//			}
-//			
-//			return root;
-//		}
-//		
-//		void union(int x, int y) {
-//			int fx = father.get(x);
-//			int fy = father.get(y);
-//			if(fx != fy)
-//				father.put(fx, fy);
-//		}
-//	}
-
-	/*I liked this version better*/
-//	class UnionFind {
-//		int []ids;
-//		int cnt;
-//		
-//		public UnionFind(int size) {
-//			this.ids = new int[size];
-//			for(int i = 0; i < this.ids.length; i++) {
-//				this.ids[i]  = i;
-//			}
-//			this.cnt = size;
-//		}
-//		
-//		public int find(int m) {
-//			return ids[m];
-//		}
-//		
-//		public boolean union (int m, int n) {
-//			int src = find(m);
-//			int dst = find(n);
-//			
-//			if(src != dst) {
-//				//if two nodes are not into the same group collect them into one
-//				for(int i = 0; i < ids.length; i++) {
-//					if(ids[i] == src) {
-//						ids[i] = dst;
-//					}
-//				}
-//				cnt--;
-//				return true;
-//			}else {
-//				return false;
-//			}
-//		}
-//		
-//		public boolean areConnected(int m, int n) {
-//			return find(m) == find(n);
-//		}
-//		
-//		public int count() {
-//			return cnt;
-//		}
-//		
-//	}
-//	
-//	<!--My fave -->
-//	public boolean validTree(int n, int[][]edges) {
-//		UnionFind uf = new UnionFind(n);
-//		for(int i = 0; i < edges.length; i++) {
-//			// If two nodes are already in the same set, a new loop will be generated
-//			if(!uf.union(edges[i][0], edges[i][1])) {
-//				return false;
-//			}
-//		}
-//		return uf.count() == 1;
-//	}
-	
-	
-	public static boolean validTree1(int n, int[][] edges) {
+	//Version 1: Union Find - My Fave ^.^
+	class UnionFind {
+		int []ids;
+		int cnt;
 		
-		if(n == 0 || edges.length != n -1) return false;
+		public UnionFind(int size) {
+			this.ids = new int[size];
+			for(int i = 0; i < this.ids.length; i++) {
+				this.ids[i]  = i;
+			}
+			this.cnt = size;
+		}
 		
-		UnionFind ufo = new UnionFind(n);
-		for(int [] crt : edges) {
-			int p1 = crt[0];
-			int p2 = crt[1];
+		public int find(int m) {
+			return ids[m];
+		}
+		
+		public boolean union (int m, int n) {
+			int src = find(m);
+			int dst = find(n);
 			
-			if(ufo.find(p1) != ufo.find(p2)) {
-				ufo.unify(p1, p2);
+			if(src != dst) {
+				//if two nodes are not into the same group collect them into one
+				for(int i = 0; i < ids.length; i++) {
+					if(ids[i] == src) {
+						ids[i] = dst;
+					}
+				}
+				cnt--;
+				return true;
 			}else {
-				System.out.println("Tree cannot form a cycle");
-				return false; //circle
+				return false;
 			}
 		}
-		System.out.println("Its tree!");
-		return true;
+		
+		public boolean areConnected(int m, int n) {
+			return find(m) == find(n);
+		}
+		
+		public int count() {
+			return cnt;
+		}
 		
 	}
-     //BFS Approach - Its like course schedule - topological sort
-     	public static boolean validTree(int n, int[][] edges) {
+	
+	public boolean validTree(int n, int[][]edges) {
+		UnionFind uf = new UnionFind(n);
+		for(int i = 0; i < edges.length; i++) {
+			// If two nodes are already in the same set, a new loop will be generated
+			if(!uf.union(edges[i][0], edges[i][1])) {
+				return false;
+			}
+		}
+		return uf.count() == 1;
+	}
+	
+//////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+	
+     //Version 2: BFS Approach - Its like course schedule - topological sort
+     	public static boolean validTree1(int n, int[][] edges) {
      		
      		if(n == 0 || edges.length != n-1) return false;
      		
@@ -202,12 +147,70 @@ public class GraphValidTree {
      		return hashSet.size() == n;
      	}
      	
+     	/////////////////////////////////////////////////////////////////////////////////////////
+     	// Version 1.1: Union Find with HashMap
+//    	class UnionFind{
+//    	HashMap<Integer, Integer>father = new HashMap<Integer, Integer>();
+    //	
+//    	UnionFind(int n){
+//    		for(int i=0; i<n; i++) {
+//    			father.put(i, i);
+//    		}
+//    	}
+    //	
+//    	// Find the root of the component/set
+//    	int find(int p) {
+//    		int root = p;
+//    		while(root != father.get(root))
+//    			root = father.get(root);
+//    		
+//    		//compress the path leading back to the root
+//    		//doing this operation is called 'path compression'
+//    		//and is what gives us amortized time complexity
+//    		while(p != father.get(root)){
+//    			int next = root;
+//    			root = father.get(root);
+//    			father.put(next, root);
+//    		}
+//    		
+//    		return root;
+//    	}
+    //	
+//    	void union(int x, int y) {
+//    		int fx = father.get(x);
+//    		int fy = father.get(y);
+//    		if(fx != fy)
+//    			father.put(fx, fy);
+//    	}
+    //}
+    //	
+//    	public static boolean validTree1(int n, int[][] edges) {
+//    		
+//    		if(n == 0 || edges.length != n -1) return false;
+//    		
+//    		UnionFind ufo = new UnionFind(n);
+//    		for(int [] crt : edges) {
+//    			int p1 = crt[0];
+//    			int p2 = crt[1];
+//    			
+//    			if(ufo.find(p1) != ufo.find(p2)) {
+//    				ufo.unify(p1, p2);
+//    			}else {
+//    				System.out.println("Tree cannot form a cycle");
+//    				return false; //circle
+//    			}
+//    		}
+//    		System.out.println("Its tree!");
+//    		return true;
+//    		
+//    	}
+     	
      	public static void main(String args[]) {
      		int n = 5;
      		int[][] edges1 = {{0, 1}, {0, 2}, {0, 3}, {1, 4}}; //return true
      		int[][] edges2 = {{0, 1}, {1, 2}, {2, 3}, {1, 3}, {1, 4}};  //return false
      		
-     		validTree(5, edges2);
+     		//validTree(5, edges2);
      		
      	}
 
