@@ -29,6 +29,10 @@ Easy Number of Islands 25 %
 Medium Find the Weak Connected Component in the Directed Graph
  * */
 
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.List;
+
 /**
  * Definition for a point.
  * class Point {
@@ -38,41 +42,49 @@ Medium Find the Weak Connected Component in the Directed Graph
  *     Point(int a, int b) { x = a; y = b; }
  * }
  */
+
+class Point{
+	int x;
+	int y;
+	Point() { x = 0; y = 0; }
+	Point(int a, int b) { x = a; y = b; }
+	
+}
 public class NumberOfIslands2 {
-    	class UnionFind{
-	    int n,m;
-		HashMap<Integer,Integer> hm = new HashMap<>();
-		UnionFind(int n, int m){
-		    this.n=n;
-            this.m=m;
-			for(int i=0; i< n; i++){
-				for (int j=0; j< m; j++){
-					hm.put(i*m+j, i*m+j);
-				}
-			}
-		}
-		int find(int crt){
-			int now =crt;
-			while(hm.get(now)!=(now)){
-				now = hm.get(now);
-			}
-			int father = now;
-			now =crt;
-			while(!hm.get(now).equals(father)){
-				int temp = now ;
-				now = hm.get(now);
-				hm.put(temp, father);
-			}
-			return father;
-		}
-		void  union(int a, int b){
-			int father_a = find(a);
-			int father_b = find(b);
-			if(father_a!=(father_b)){
-				hm.put(father_a, father_b);
-			}
-		}
-	}
+//    	private class UnionFind{
+//		    int n,m;
+//			HashMap<Integer,Integer> hm = new HashMap<>();
+//			UnionFind(int n, int m){
+//			    this.n=n;
+//	            this.m=m;
+//				for(int i=0; i< n; i++){
+//					for (int j=0; j< m; j++){
+//						hm.put(i*m+j, i*m+j);
+//					}
+//				}
+//			}
+//			int find(int crt){
+//				int now =crt;
+//				while(hm.get(now)!=(now)){
+//					now = hm.get(now);
+//				}
+//				int father = now;
+//				now =crt;
+//				while(!hm.get(now).equals(father)){
+//					int temp = now ;
+//					now = hm.get(now);
+//					hm.put(temp, father);
+//				}
+//				return father;
+//			}
+//			void  union(int a, int b){
+//				int father_a = find(a);
+//				int father_b = find(b);
+//				if(father_a!=(father_b)){
+//					hm.put(father_a, father_b);
+//				}
+//			}
+//	}
 	public List<Integer> numIslands2(int n, int m, Point[] operators) {
 		List<Integer> res = new ArrayList<>();
 		if(n==0||m==0||operators==null){

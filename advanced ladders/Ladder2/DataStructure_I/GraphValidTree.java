@@ -1,4 +1,11 @@
 package Ladder2.DataStructure_I;
+
+import java.util.ArrayList;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.LinkedList;
+import java.util.Queue;
+
 /**
  * 178. Graph Valid Tree - Medium - required
 
@@ -107,38 +114,38 @@ public class GraphValidTree {
      
      
      //Union Find Approach
-      	class UnionFind {
-		HashMap<Integer, Integer> father = new HashMap<Integer, Integer>();
-
-		UnionFind(int n) {
-			for (int i =0; i< n; i++){
-				father.put(i,i);
-			}
-		}
-
-		int find(int x) {
-			int crt =x ;
-			while(father.get(crt)!=crt){
-				crt = father.get(crt);
-			}
-			int fa = crt;
-			crt= x;
-			while(father.get(crt)!=fa){
-				int temp = crt;
-				crt= father.get(crt);
-				father.put(temp, fa);
-			}
-			return fa;
-		}
-
-		void union(int x, int y) {
-			int fx= father.get(x);
-			int fy = father.get(y);
-			if(fx!=fy){
-				father.put(fx,fy);
-			}
-		}
-	}
+//      	private class UnionFind {
+//      		HashMap<Integer, Integer> father = new HashMap<Integer, Integer>();
+//
+//			UnionFind(int n) {
+//				for (int i =0; i< n; i++){
+//					father.put(i,i);
+//				}
+//			}
+//
+//			int find(int x) {
+//				int crt =x ;
+//				while(father.get(crt)!=crt){
+//					crt = father.get(crt);
+//				}
+//				int fa = crt;
+//				crt= x;
+//				while(father.get(crt)!=fa){
+//					int temp = crt;
+//					crt= father.get(crt);
+//					father.put(temp, fa);
+//				}
+//				return fa;
+//			}
+//	
+//			void union(int x, int y) {
+//				int fx= father.get(x);
+//				int fy = father.get(y);
+//				if(fx!=fy){
+//					father.put(fx,fy);
+//				}
+//			}
+//	}
 
 	/**
 	 * @param n an integer

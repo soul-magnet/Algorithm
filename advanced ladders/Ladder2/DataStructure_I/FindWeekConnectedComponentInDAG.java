@@ -29,6 +29,13 @@ Related Problems
 
 */
 
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.HashMap;
+import java.util.HashSet;
+import java.util.List;
+import java.util.Map;
+
 /**
  * Definition for Directed graph.
  * class DirectedGraphNode {
@@ -43,39 +50,49 @@ public class FindWeekConnectedComponentInDAG {
 	 * @param <T>
 	 *
 	 */
-	public class UnionFind<T> {
-		Map<T, T> hm = new HashMap<T, T>();
-		public UnionFind(HashSet<T> hs) {
-			for(T a: hs){
-				hm.put(a, a);
-			}
+	
+	private class DirectedGraphNode {
+		int label;
+		ArrayList<DirectedGraphNode> neighbors;
+		DirectedGraphNode(int x) { 
+			label = x; 
+			neighbors = new ArrayList<DirectedGraphNode>(); 
 		}
-		
-		public T  find(T x) {
-			T father = hm.get(x);
-			while (father!=hm.get(father)){
-				father=hm.get(father);
-			}
-			//compress_find from link to star map
-			T temp ;
-			T next= hm.get(x);
-			while(next!=hm.get(next) ){
-				temp= hm.get(next);
-				hm.put(next, father);
-				next=temp;
-			}
-			return father;
-		}
-		
-		public void union ( T x, T y){
-			T fx= hm.get(x);
-			T fy= hm.get(y);
-			if (fx!= fy){
-				hm.put(fx, fy);
-			}
-		}
-		
-	}
+	};
+		 
+//	private class UnionFind<T> {
+//		Map<T, T> hm = new HashMap<T, T>();
+//		public UnionFind(HashSet<T> hs) {
+//			for(T a: hs){
+//				hm.put(a, a);
+//			}
+//		}
+//		
+//		public T  find(T x) {
+//			T father = hm.get(x);
+//			while (father!=hm.get(father)){
+//				father=hm.get(father);
+//			}
+//			//compress_find from link to star map
+//			T temp ;
+//			T next= hm.get(x);
+//			while(next!=hm.get(next) ){
+//				temp= hm.get(next);
+//				hm.put(next, father);
+//				next=temp;
+//			}
+//			return father;
+//		}
+//		
+//		public void union ( T x, T y){
+//			T fx= hm.get(x);
+//			T fy= hm.get(y);
+//			if (fx!= fy){
+//				hm.put(fx, fy);
+//			}
+//		}
+//		
+//	}
 	/**
      * @param nodes a array of Undirected graph node
      * @return a connected set of a Undirected graph
