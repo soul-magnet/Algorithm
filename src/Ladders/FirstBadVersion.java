@@ -25,8 +25,11 @@ public class FirstBadVersion {
 	 * the kth code version is bad or not.
 	*/
 	
-	public class VersionControl {
-		     public static boolean isBadVersion(int k);
+	public static class VersionControl {
+		     public static boolean isBadVersion(int k) {
+				// TODO Auto-generated method stub
+				return false;
+			}
 		 }
     public int findFirstBadVersion(int n) {
         int start = 1, end = n;

@@ -12,7 +12,7 @@ public class MatrixManipulations {
 		    int size = sc.nextInt(); // load the size
 		    int[][] matrix = new int[size][size]; // create a new array; note 2
 		    for(int row = 0; row < size; ++row) {
-		    	int[] input = sc.nextInt(); // read a row
+		    	byte[] input = sc.nextInt(); // read a row
 		        input = Arrays.copyOf(input, size); // pad/truncate the array
 		        int[] processed = new int[size]; // for storing a row
 		        for(int entry = 0; entry < size; ++entry)
