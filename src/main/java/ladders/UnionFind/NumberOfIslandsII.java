@@ -1,5 +1,7 @@
 package main.java.ladders.UnionFind;
 
+import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 /**
@@ -45,9 +47,55 @@ class Point {
 	Point(int a, int b) { x = a; y = b; }
 	
 }
+
+// SOLID
 public class NumberOfIslandsII {
 	public List<Integer> numIslands2(int n, int m, Point[] operators) {
-		//TODO
+		//Write your code here
+		
+		List<Integer>result = new ArrayList<>();
+		if(operators == null || operators.length == 0) return result;
+		
+		int[] id = new int[n*m];
+		Arrays.fill(id, -1);
+		int size = 0; //numOfComponents
+		
+		int[] directionX = {-1, 1, 0, 0};
+		int[] directionY = {0, 0, -1, 1};
+		
+		for(Point pt : operators) {
+			int p = pt.x * m + pt.y;
+			if(id[p] != -1) {
+				result.add(size);
+				continue;
+			}
+			id[p] = p;
+			size++;
+			
+			for(int i = 0; i < 4; i++) {
+				Point neighbor = new Point(pt.x + directionX[i], pt.y + directionY[i]);
+				if(neighbor.x < 0 || neighbor.x >= n || neighbor.y <0 || neighbor.y >= m) continue;
+				int q = neighbor.x * m + neighbor.y;
+				if(id[q] == -1) continue;
+				if(find(id, p) != find(id, q)) {
+					id[find(id, p)] = find(id, q);
+					size--;
+				}
+			}
+			result.add(size);
+		}
+		
+		return result;
 	}
+	
+	public int find(int[] id, int i) {
+		while(i != id[i]) {
+			id[i] = id[id[i]];
+			i = id[i];
+		}
+		return i;
+	}
+	
+	
 
 }
