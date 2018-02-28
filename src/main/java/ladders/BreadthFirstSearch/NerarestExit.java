@@ -4,7 +4,7 @@ import java.util.LinkedList;
 import java.util.Queue;
 
 /**
- * 663. Nearest Exit - Medium
+ * 663. Nearest Exit - Medium - Google Onsite
 
 You are given a m x n 2D grid initialized with these three possible values.
 
@@ -37,6 +37,8 @@ Hard Build Post Office 19 %
 Hard Build Post Office II 27 %
 Medium Surrounded Regions 23 %
 Easy Number of Islands 25 %
+ * 
+ * http://www.jiuzhang.com/qa/7376/
  * */
 
 class Point {

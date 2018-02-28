@@ -54,18 +54,23 @@ Breadth First Search
  * }
  */
 
+//Thoughts: Easy to Understand
+// classic BFS traversal
+
 public class KnightShortestPath {
+	 
+	class Point{
+		public int x, y;
+		public Point() {x = 0; y = 0;}
+		public Point(int a, int b) {x = a; y = b;}
+		
+	}
 	
-	 /**
+	/**
      * @param grid a chessboard included 0 (false) and 1 (true)
      * @param source, destination a point
      * @return the shortest path
      */
-	/*
-	 * Thoughts: Easy to Understand
-	 * classic BFS traversal
-	 * */
-	
 	public int shortestPath(boolean[][] grid, Point source, Point destination) {
 	  	  if(grid == null || grid.length == 0 || grid[0].length == 0) return -1;
 	  	  
@@ -131,7 +136,8 @@ public class KnightShortestPath {
                for(int[] dir : directions){
                    nextPoint.x = x + dir[0];
                    nextPoint.y = y + dir[1];
-                   if( nextPoint.x < 0 ||  nextPoint.x >= m || nextPoint.y < 0 || nextPoint.y >= n || visited.contains( nextPoint.x * queue.size() + nextPoint.y) || grid[ nextPoint.x][nextPoint.y] != true)
+                   if( nextPoint.x < 0 ||  nextPoint.x >= m || nextPoint.y < 0 || nextPoint.y >= n || 
+                		   visited.contains( nextPoint.x * queue.size() + nextPoint.y) || grid[ nextPoint.x][nextPoint.y] != true)
                 	   continue;
                    queue.offer( nextPoint);
                }
@@ -141,8 +147,5 @@ public class KnightShortestPath {
             
         }
         return result;
-    }
-      
-      
-
+    }    
 }

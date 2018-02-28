@@ -1,4 +1,4 @@
-package BreadthFirstSearch;
+package main.java.ladders.BreadthFirstSearch;
 /**
  * 
  * 70. Binary Tree Level Order Traversal II - Medium

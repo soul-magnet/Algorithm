@@ -43,7 +43,14 @@ import java.util.Stack;
  * };
  */
 
-//hello
+class DirectedGraphNode {
+	int label;
+	ArrayList<DirectedGraphNode> neighbors;
+	DirectedGraphNode(int x){
+		label = x;
+		neighbors = new ArrayList<DirectedGraphNode>();
+	}
+}
 public class TopologicalSortingBFS {
 	/**
      * @param graph: A list of Directed graph node

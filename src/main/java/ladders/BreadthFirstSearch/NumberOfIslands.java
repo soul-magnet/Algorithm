@@ -1,4 +1,6 @@
-package BreadthFirstSearch;
+package main.java.ladders.BreadthFirstSearch;
+
+import main.java.ladders.UnionFind.UnionFind;
 
 /* Given a boolean 2D matrix, 0 is represented as the sea, 
  * 1 is represented as the island. If two 1 is adjacent, 
@@ -76,7 +78,7 @@ public class NumberOfIslands {
 		return uf.count;
 	}
 	
-	class UnionFind{
+	private class UnionFind{
 		public int count;
 		public int[] parents;
 		public UnionFind(int m , int n, char[][]grid){
