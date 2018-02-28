@@ -22,9 +22,46 @@ Union Find
 Related Problems 
 Hard Minimum Spanning Tree 26 %
  * */
-public class ConnectingGraph3 {
-	public ConnectingGraph3(int n) {
-		
-	}
 
+//Union Find
+public class ConnectingGraph3 {
+	
+	private int[]id;
+	private int size;
+	
+	public int find(int p) {
+		while(p != id[p]) {
+			id[p] = id[id[p]];
+			p = id[p];
+		}
+		return p;
+	}
+	
+	public int getComponent() {
+		return size;
+	}
+	
+	//initialize your data structure in here
+	public ConnectingGraph3(int n) {
+		size = n;
+		for(int i =0 ; i< n+1; i++) {
+			id[i] = i;
+		}
+	}
+	
+	public void connect(int a, int b) {
+		// Write your code here
+		int p1 = find(a);
+		int p2 = find(b);
+		
+		while(p1 != p2) {
+			p1 = id[p2];
+			size--;
+		}
+	}
+	
+	public int query() {
+		// Write your code here
+		return getComponent();
+	}
 }
