@@ -1,4 +1,4 @@
-package UnionFind;
+package main.java.ladders.UnionFind;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -13,6 +13,7 @@ public class DisjointSet {
 		int rank;
 	}
 	
+	//TODO
 	/*
 	 * Create a set with only one element
 	 * */

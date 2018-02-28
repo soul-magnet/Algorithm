@@ -6,7 +6,7 @@
  *     DirectedGraphNode(int x) { label = x; neighbors = new ArrayList<DirectedGraphNode>(); }
  * };
  */
-package UnionFind;
+package main.java.ladders.UnionFind;
 
 import java.util.ArrayList;
 import java.util.HashMap;

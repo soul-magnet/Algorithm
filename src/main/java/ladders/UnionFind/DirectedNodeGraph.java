@@ -1,4 +1,4 @@
-package UnionFind;
+package main.java.ladders.UnionFind;
 
 import java.util.ArrayList;
 

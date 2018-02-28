@@ -28,7 +28,6 @@ public class UnionFind {
 		//make sure there are positive number of elements
 		if(size <= 0) throw new IllegalArgumentException("Size <= 0 is not allowed");
 		
-		
 		this.size = numComponents = size;
 		sz = new int[size];
 		id = new int[size];
@@ -39,7 +38,8 @@ public class UnionFind {
 		}
 	}
 	
-	//Find which component/set 'p' be;ongs to, takes amortized constant time.
+
+	//Find which component/set 'p' belongs to, takes amortized constant time.
 	public int find(int p){
 		
 		// Find the root of the component/set
