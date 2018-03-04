@@ -13,8 +13,8 @@ Given A = [1, 4, 6, 8], target = 3 and k = 3, return [4, 1, 6].
 Challenge 
 O(logn + k) time complexity.
 
-Tags 
-Binary Search Two Pointers
+Tags: Binary Search Two Pointers
+
 Related Problems 
 Medium K Closest Points 21 %
 Easy Closest Number in Sorted Array 35 %

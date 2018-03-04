@@ -1,4 +1,4 @@
-package Ladder4.BinarySearch_SweepLine;
+package main.java.ladders.BinarySearch;
 /**
  * 
  * 600. Smallest Rectangle Enclosing Black Pixels - Hard -Optional

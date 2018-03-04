@@ -1,6 +1,6 @@
-package Ladder4.BinarySearch_SweepLine;
+package main.java.ladders.BinarySearch;
 /**
- * 437. Copy Books - Hard - Related
+ * 437. Copy Books 
 
 Given n books and the ith book has A[i] pages. You are given k people to copy the n books.
 

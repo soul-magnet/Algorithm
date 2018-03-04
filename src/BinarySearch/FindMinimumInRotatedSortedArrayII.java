@@ -1,13 +1,27 @@
 package BinarySearch;
+/**
+ * 160. Find Minimum in Rotated Sorted Array II - Medium - Optional
+
+Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+
+(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+Find the minimum element.
+
+ Notice
+The array may contain duplicates.
+
+Example
+Given [4,4,5,6,7,0,1,2] return 0.
+
+Tags 
+Binary Search Divide and Conquer
+Related Problems 
+Medium Find Minimum in Rotated Sorted Array 39 %
+Medium Search in Rotated Sorted Array II 40 %
+ * 
+ * */
 /*
- * Suppose a sorted array is rotated at some pivot unknown to you beforehand.
- * (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
- * Find the minimum element.
- * The array may contain duplicates.
- * 
- * Example: Given [4,4,5,6,7,0,1,2] return 0
- * 
- * 
  * Analysis: 
  * This is a follow-up question. We only need to add one more condition, which checks
  * if the left-most element and the right most element are equal.  If they are equal we can simply 

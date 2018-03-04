@@ -1,13 +1,26 @@
-package BinarySearch;
+package main.java.ladders.BinarySearch;
 
 import java.util.ArrayList;
 
-/*
- * Given a sorted array of n integers, 
- * find the starting and ending position of a given target value.
- * If the target is not found in the array, return [-1, -1].
- * Example: Given [5, 7, 7, 8, 8, 10] and target value 8, return [3, 4].
- * Challenge: O(log n) time.
+/**
+ * 61. Search for a Range - Medium -Optional
+
+Given a sorted array of n integers, find the starting and ending position of a given target value.
+
+If the target is not found in the array, return [-1, -1].
+
+Example
+Given [5, 7, 7, 8, 8, 10] and target value 8,
+return [3, 4].
+
+Challenge 
+O(log n) time.
+
+Tags: Array Binary Search Sorted Array
+
+Related Problems 
+Medium Range Sum Query 2D - Immutable 21 %
+Easy Total Occurrence of Target 27 %
  * */
 public class SearchForARange {
 	/** 

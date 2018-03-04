@@ -1,11 +1,16 @@
-package BinarySearch;
-/*
- * Write an efficient algorithm that searches for a value in an m x n matrix.
- * This matrix has the following properties:
- * Integers in each row are sorted from left to right.
- * The first integer of each row is greater than the last integer of the previous row.
- * 
- * Example: Consider the following matrix:
+package main.java.ladders.BinarySearch;
+/**
+ * 28. Search a 2D Matrix - Easy - Optional
+
+Write an efficient algorithm that searches for a value in an m x n matrix.
+
+This matrix has the following properties:
+
+Integers in each row are sorted from left to right.
+The first integer of each row is greater than the last integer of the previous row.
+
+Example
+Consider the following matrix:
 
 [
     [1, 3, 5, 7],
@@ -14,17 +19,26 @@ package BinarySearch;
 ]
 Given target = 3, return true.
 
-Challenge: O(log(n) + log(m)) time
+Challenge 
+O(log(n) + log(m)) time
 
-Analysis:
+Tags: Binary Search Matrix Yahoo
+
+Related Problems 
+Medium Count Negative Number 23 %
+Medium Search in Rotated Sorted Array 30 %
+Medium Search a 2D Matrix II 36 %
+ * 
+ * */
+
+/* Analysis:
 - Typical problem of binary search
 You may try to solve this problem by finding the row first and then 
 the column. There is no need to do that. 
 Because of the matrix's special features, 
 the matrix can be considered as a sorted array. 
 Your goal is to find one element in this sorted array by using binary search
- 
- * */
+  */
 public class Search2DMatrix {
 	/**
      * @param matrix, a list of lists of integers

@@ -1,4 +1,27 @@
-package BinarySearch;
+package main.java.ladders.BinarySearch;
+/**
+ * 457. Classical Binary Search - Easy - Related
+
+Find any position of a target number in a sorted array. Return -1 if target does not exist.
+
+Example
+Given [1, 2, 2, 4, 5, 5].
+
+For target = 2, return 1 or 2.
+
+For target = 5, return 4 or 5.
+
+For target = 6, return -1.
+
+Challenge 
+O(logn) time
+
+Tags :Binary Search
+Related Problems 
+Easy Closest Number in Sorted Array 35 %
+Easy Last Position of Target 36 %
+Easy First Position of Target 33 %
+ * */
 /*
  * For a given sorted array (ascending order) and a target number, 
  * find the first index of this number in O(log n) time complexity.
