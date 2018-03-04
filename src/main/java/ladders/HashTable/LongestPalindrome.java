@@ -33,6 +33,9 @@ public class LongestPalindrome {
      */
 	
 	//My Fave
+	//Thoughts: Just count he number of same pairs, 
+	//then this can be used to put in the different direction to consist of problem.
+	//Then if there exist more chars, we can put one in the middle.
     public int longestPalindrome(String s) {
         // write your code here
     	if(s == null || s.length() == 0) return 0;
@@ -49,7 +52,7 @@ public class LongestPalindrome {
     }
     
     
-    
+    //Juizhang Solution
     public int longestPalindrome1(String s) {
         if(s==null || s.length()==0) return 0;
         HashSet<Character> hs = new HashSet<Character>();
