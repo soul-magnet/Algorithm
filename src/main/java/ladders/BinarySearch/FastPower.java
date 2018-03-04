@@ -1,4 +1,4 @@
-package main.java.ladders.BitManipulation;
+package main.java.ladders.BinarySearch;
 /**
  * 140. Fast Power - Medium - Required
 Calculate the an % b where a, b and n are all 32bit integers.

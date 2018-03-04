@@ -1,13 +1,30 @@
-package BinarySearch;
-/*Suppose a sorted array is rotated at some pivot unknown to you beforehand.
- * (i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
- * You are given a target value to search. If found in the array return its index, otherwise return -1.
- * You may assume no duplicate exists in the array.
+package main.java.ladders.BinarySearch;
+/**
  * 
- * Example:
- * For [4, 5, 1, 2, 3] and target=1, return 2.
- * For [4, 5, 1, 2, 3] and target=0, return -1.
- * Challenge: O(logN) time
+ * 62. Search in Rotated Sorted Array - Medium - Required
+
+Suppose a sorted array is rotated at some pivot unknown to you beforehand.
+
+(i.e., 0 1 2 4 5 6 7 might become 4 5 6 7 0 1 2).
+
+You are given a target value to search. If found in the array return its index, otherwise return -1.
+
+You may assume no duplicate exists in the array.
+
+Have you met this question in a real interview? 
+Example
+For [4, 5, 1, 2, 3] and target=1, return 2.
+
+For [4, 5, 1, 2, 3] and target=0, return -1.
+
+Challenge 
+O(logN) time
+
+Tags: Binary Search LinkedIn Array Facebook Sorted Array Uber
+
+Related Problems 
+Medium Search in Rotated Sorted Array II 40 %
+Easy Search a 2D Matrix 28 %
  * */
 public class SearchInRotatedSortedArray {
 	/** 
