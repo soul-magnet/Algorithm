@@ -1,12 +1,24 @@
-package DynamicProgramming;
-/*
- * Given a string s, cut s into some substrings such that every 
- * substring is a palindrome.
- * Return the minimum cuts needed for a palindrome partitioning of s.
- * For example, given s = "aab",
- * Return 1 since the palindrome partitioning ["aa","b"] 
- * could be produced using 1 cut.
- * 
+package main.java.ladders.DynamicProgramming;
+
+/**
+ * 108. Palindrome Partitioning II  - Medium 
+Given a string s, cut s into some substrings such that every substring is a palindrome.
+
+Return the minimum cuts needed for a palindrome partitioning of s.
+ 
+Example
+Given s = "aab",
+
+Return 1 since the palindrome partitioning ["aa", "b"] could be produced using 1 cut.
+
+Tags: Dynamic Programming
+
+Related Problems 
+Medium Wiggle Sort II 25 %
+Medium Palindrome Partitioning 28 %
+Medium Longest Palindromic Substring 29 %
+ * */
+/* 
  * Analysis: Dynamic Programming, and also double DP problem! Why?
  * Because, if we use the same algorithm in Palindrome Partitioning I, 
  * definetely it will expire the time limit. When you are facing the problem 
