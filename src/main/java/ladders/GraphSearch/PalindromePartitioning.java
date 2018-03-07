@@ -1,4 +1,4 @@
-package GraphSearch;
+package main.java.ladders.GraphSearch;
 
 import java.util.ArrayList;
 import static java.lang.Math.abs;
