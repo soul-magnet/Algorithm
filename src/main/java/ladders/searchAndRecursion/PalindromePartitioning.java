@@ -1,4 +1,4 @@
-package searchAndRecursion;
+package main.java.ladders.searchAndRecursion;
 
 import java.util.ArrayList;
 import java.util.List;

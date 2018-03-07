@@ -1,4 +1,4 @@
-package searchAndRecursion;
+package main.java.ladders.searchAndRecursion;
 
 public class NQueensII {
 
