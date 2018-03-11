@@ -4,7 +4,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 136. Palindrome Partitioning - Medium
+ * 136. Palindrome Partitioning - Medium - Required
 
 Given a string s, partition s such that every substring of the partition is a palindrome.
 
