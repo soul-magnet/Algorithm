@@ -1,4 +1,4 @@
-package LaddersTest;
+package main.java.ladders.unittest;
 
 import static org.junit.Assert.*;
 

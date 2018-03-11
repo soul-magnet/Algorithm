@@ -1,8 +1,23 @@
-package binarytree;
+package main.java.ladders.binarytree;
 
 import java.util.LinkedList;
+/* Given a binary tree, find its minimum depth.
+ * The minimum depth is the number of nodes along the shortest path 
+ * from the root node down to the nearest leaf node.
+ * 
+ */
 
-import DataStructure.TreeNode;
+import binarytree.TreeNode;
+
+/* Analysis: 
+* - Recursive Solution:
+* We can solve this easily using recursion. Because each of the leftChild
+* and rightChild of a node is sub-tree itself. We first compute the max height 
+* of left sub-tree, then compute the max height of right sub tree.
+* Therefore, the max height of the current node is greater of the two heights + 1.
+* For the base case,the current node is NULL, we return zero. 
+* NULL signifies there is no tree, therefore its max height is zero.
+* */
 
 /**
  * Definition of TreeNode:
@@ -15,11 +30,7 @@ import DataStructure.TreeNode;
  *     }
  * }
  */
-/* Given a binary tree, find its minimum depth.
- * The minimum depth is the number of nodes along the shortest path 
- * from the root node down to the nearest leaf node.
- * 
- * */
+
 public class MinimumDepthOfBinaryTree {
 	/**
      * @param root: The root of binary tree.
@@ -122,5 +133,16 @@ public class MinimumDepthOfBinaryTree {
         return 0;
         
     }*/
+	
+	//Another version
+	public int maxDepth(TreeNode root) {
+        if (root == null) {
+            return 0;
+        }
+        
+        int left = maxDepth(root.left);
+        int right = maxDepth(root.right);
+        return Math.max(left, right) + 1;
+	}
 	
 }

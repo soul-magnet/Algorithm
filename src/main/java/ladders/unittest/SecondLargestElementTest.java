@@ -3,7 +3,7 @@
  * 
  * JUnit test for class SecondLargestElement.
  */
-package LaddersTest;
+package main.java.ladders.unittest;
 
 import static org.junit.Assert.*;
 
@@ -14,8 +14,8 @@ import java.util.HashSet;
 
 import org.junit.Test;
 
-import Ladders.SecondLargestElement;
 import junit.framework.Assert;
+import main.java.ladders.IntegerArray.SecondLargestElement;
 
 public class SecondLargestElementTest {
 

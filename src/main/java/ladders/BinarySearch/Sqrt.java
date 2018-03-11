@@ -1,4 +1,4 @@
-package BinarySearch;
+package main.java.ladders.BinarySearch;
 
 /**
  * 141. Sqrt(x) - Easy - Related

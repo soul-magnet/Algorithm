@@ -1,4 +1,6 @@
-package Ladders;
+package main.java.ladders.BinarySearch;
+
+import main.java.ladders.util.TreeNode;
 
 /**
 * Definition of TreeNode:

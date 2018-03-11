@@ -1,22 +1,35 @@
-package binarytree;
+package main.java.ladders.binarytree;
+/**
+ * 93. Balanced Binary Tree - Easy - Required
 
-import DataStructure.TreeNode;
+Given a binary tree, determine if it is height-balanced.
 
-/*Given a binary tree, determine if it is height-balanced.
- * For this problem, a height-balanced binary tree is defined as a binary tree 
- * in which the depth of the two subtrees of every node never differ by more than 1.
- * Example: Given binary tree A={3,9,20,#,#,15,7}, B={3,#,20,15,7}
- * 
- * 
- *A) 3            B)    3 
-    / \                  \
-   9  20                 20
-     /  \                / \
-    15   7              15  7
-    
+For this problem, a height-balanced binary tree is defined as a binary tree in 
+which the depth of the two subtrees of every node never differ by more than 1.
+
+Example
+Given binary tree A = {3,9,20,#,#,15,7}, B = {3,#,20,15,7}
+
+A)  3            B)    3 
+   / \                  \
+  9  20                 20
+    /  \                / \
+   15   7              15  7
 The binary tree A is a height-balanced binary tree, but B is not.
-Analysis: Use recursion
-*/
+
+Tags 
+Divide and Conquer Recursion
+Related Problems 
+Medium Validate Binary Search Tree 22 %
+ * */
+
+//Thoughts: RECURSIVE -The function call stack corresponds to a sequence of calls from the root through 
+//the unique path to a current node, and the stach height is therefore bounded by 
+//the height of the tree, leading on an O(h) space bounnd. 
+//The time complexity is the same as postprder traversal O(n)
+
+
+/* Analysis: Use recursion*/
 /**
  * Definition of TreeNode:
  * public class TreeNode {
@@ -29,10 +42,7 @@ Analysis: Use recursion
  * }
  */
 
-//Thoughts: RECURSIVE -The function call stack corresponds to a sequence of calls from the root through 
-// the unique path to a current node, and the stach height is therefore bounded by 
-//the height of the tree, leading on an O(h) space bounnd. 
-//The time complexity is the same as postprder traversal O(n)
+
 public class BalancedBinaryTree {
    /**
      * @param root: The root of binary tree.
@@ -69,10 +79,6 @@ public class BalancedBinaryTree {
 // 2. if there are exactly 2 leaf depths and they are more than 1 apart.
 //  Why DFS not BFS? DFS reaches leaves faster, which allows us to short-circuit earlier in some cases.
  
-import java.util.List;
-import java.util.ArrayList;
-import java.util.Stack;
-
 private static class NodeDepthPair {
 
     BinaryTreeNode node;

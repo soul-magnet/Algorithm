@@ -1,4 +1,4 @@
-package Ladders;
+package main.java.ladders.DynamicProgramming;
 
 import java.util.ArrayList;
 

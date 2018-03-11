@@ -5,7 +5,7 @@
  * and returns the second largest value in the list. 
  * 
  * */
-package Ladders;
+package main.java.ladders.IntegerArray;
 
 import java.util.Collection;
 

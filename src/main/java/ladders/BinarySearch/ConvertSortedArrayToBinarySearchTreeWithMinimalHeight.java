@@ -1,6 +1,6 @@
 package BinarySearch;
 
-import Ladders.TreeNode;
+import main.java.ladders.util.TreeNode;
 
 /*
  * Given a sorted (increasing order) array, 

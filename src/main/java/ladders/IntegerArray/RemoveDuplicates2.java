@@ -1,6 +1,6 @@
-package Ladders;
+package main.java.ladders.IntegerArray;
 
-public class RemoveDuplicatesII {
+public class RemoveDuplicates2 {
 	/**
 	 * Follow up for "Remove Duplicates":
 	What if duplicates are allowed at most twice?

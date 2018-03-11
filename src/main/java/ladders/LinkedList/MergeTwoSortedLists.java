@@ -1,6 +1,4 @@
-package LinkedList;
-
-import DataStructure.ListNode;
+package main.java.ladders.LinkedList;
 
 /**
  * 165. Merge Two Sorted Lists - Easy - Required

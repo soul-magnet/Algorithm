@@ -1,12 +1,15 @@
-package binarytree;
+package main.java.ladders.binarytree;
+/**
+ * 67. Binary Tree Inorder Traversal  - Easy - Required
+ Description
+ Notes
+ Testcase
+ Judge
+Given a binary tree, return the inorder traversal of its nodes' values.
 
-import java.util.ArrayList;
-import java.util.Stack;
-
-import DataStructure.TreeNode;
-
-/*Given a binary tree, return the inorder traversal of its nodes' values.
- * Given binary tree {1,#,2,3},
+Have you met this question in a real interview? 
+Example
+Given binary tree {1,#,2,3},
 
    1
     \
@@ -17,9 +20,21 @@ import DataStructure.TreeNode;
 
 return [1,3,2].
 
-Challenge: Can you do it without recursion?
+Challenge 
+Can you do it without recursion?
+
+Tags 
+Recursion Binary Tree Binary Tree Traversal
+Related Problems 
+Easy Binary Tree Preorder Traversal 42 %
  * 
- * Analsis:
+ * */
+import java.util.ArrayList;
+import java.util.Stack;
+
+import DataStructure.TreeNode;
+
+/* Analysis:
  * 
  * Solution 1: Iterative
  * 1. left child --> parent --> right child

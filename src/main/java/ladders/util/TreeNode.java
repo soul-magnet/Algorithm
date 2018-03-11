@@ -1,4 +1,4 @@
-package Ladders;
+package main.java.ladders.util;
 
 public class TreeNode {
 	

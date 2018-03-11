@@ -1,4 +1,4 @@
-package binarytree;
+package main.java.ladders.binarytree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
@@ -7,7 +7,7 @@ import java.util.Queue;
 import BinarySearch.TreeNode;
 
 
-/*
+/**
  * Given a binary tree, return the level order traversal of its nodes' 
  * values. (ie, from left to right, level by level).
  * Example: Given binary tree {3,9,20,#,#,15,7},
@@ -27,7 +27,10 @@ return its level order traversal as:
   [15,7]
 ]
 Challenge: Using only 1 queue to implement it.
- * Analysis:
+*/
+
+
+ /* Analysis:
  * Method1: There are basically two functions in this method. 
  * One is to print all nodes at a given level(printGivenLevel), 
  * and other is to print level order traversal of the tree(printLevelorder)
@@ -71,6 +74,18 @@ Challenge: Using only 1 queue to implement it.
  * 
  * 
  * */
+
+/**
+ * Space and Time Complexity 
+ * Time: O(n)
+ * Space: We are not using constant amount of memory to implement this algorithm, 
+ * We are using queue, which is shrinking and enlarging.
+ * Assuming that the queue is dynamic, so if we say each node has only one child, then we can assume that 
+ * space comp is gonna be O(1) - best case
+ * but we are are talking about the complete binary treee, then the space comp is gonna be O(n) - worst case,
+ * since the depest node level is n/2
+ * Also average space comp is gonna be O(n)
+ */
 /**
  * Definition of TreeNode:
  * public class TreeNode {

@@ -1,23 +1,35 @@
-package binarytree;
+package main.java.ladders.binarytree;
 
-import DataStructure.TreeNode;
+/**
+ * 95. Validate Binary Search Tree - Medium - Required
 
-/* Given a binary tree, determine if it is a valid binary search tree (BST).
- * Assume a BST is defined as follows:
- * The left subtree of a node contains only nodes with keys less than the node's key.
- * The right subtree of a node contains only nodes with keys greater than the node's key.
- * Both the left and right subtrees must also be binary search trees.
- * An example:
+Given a binary tree, determine if it is a valid binary search tree (BST).
+
+Assume a BST is defined as follows:
+
+The left subtree of a node contains only nodes with keys less than the node's key.
+The right subtree of a node contains only nodes with keys greater than the node's key.
+Both the left and right subtrees must also be binary search trees.
+A single node tree is a BST
+
+Example
+An example:
 
   2
  / \
-1   3
-   /
-  4
-   \
-    5
-The above binary tree is serialized as {2,1,3,#,#,4,#,#,5} (in level order)
-Analysis:
+1   4
+   / \
+  3   5
+The above binary tree is serialized as {2,1,4,#,#,3,5} (in level order).
+
+Tags 
+Divide and Conquer Recursion Binary Tree Binary Search Tree
+Related Problems 
+Medium BST Swapped Nodes 14 %
+Medium Inorder Successor in Binary Search Tree 33 %
+Easy Balanced Binary Tree 37 %
+ * */
+/* Analysis:
 - All values on the left subtree must be less than root
 - and all values on right subtree must be grater than root.
 - so we just check the boundaries for each node.

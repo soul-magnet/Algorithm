@@ -1,6 +1,6 @@
 package main.java.ladders.BinarySearch;
 /**
- * 457. Classical Binary Search - Easy - Related
+ * 457. Classical Binary Search - Easy - Related
 
 Find any position of a target number in a sorted array. Return -1 if target does not exist.
 

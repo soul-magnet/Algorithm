@@ -1,4 +1,4 @@
-package binarytree;
+package main.java.ladders.binarytree;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -6,21 +6,32 @@ import java.util.Stack;
 
 import DataStructure.TreeNode;
 
-/*
- * Given a binary tree, return the preorder traversal of its nodes' values.
- * Example: Given binary tree {1,#,2,3}:
+/**
+ * 66. Binary Tree Preorder Traversal - Easy - Required
 
-1
- \
-  2
- /
-3
-return [1,2,3].
+Given a binary tree, return the preorder traversal of its nodes' values.
+ 
+Example
+Given:
 
-Challenge: Can you do it without recursion?
+    1
+   / \
+  2   3
+ / \
+4   5
+return [1,2,4,5,3].
 
+Challenge 
+Can you do it without recursion?
 
- * Analysis: 
+Tags 
+Recursion Binary Tree Non Recursion Binary Tree Traversal
+Related Problems 
+Easy Binary Tree Postorder Traversal 43 %
+Easy Binary Tree Inorder Traversal 43 %
+ * 
+ * */
+/* Analysis: 
  * 1. What is preorder? - parent node is processed before its children
  * 2. Use Stack from Java core library
  * The key is solving this problem is using a stack to store left and right children,

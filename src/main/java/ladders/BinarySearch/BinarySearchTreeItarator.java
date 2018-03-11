@@ -1,6 +1,8 @@
-package Ladders;
+package main.java.ladders.BinarySearch;
 
 import java.util.Stack;
+
+import main.java.ladders.util.TreeNode;
 
 /*Design an iterator over a binary search tree with the following rules:
 

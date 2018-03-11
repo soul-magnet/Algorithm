@@ -1,4 +1,4 @@
-package Ladders;
+package main.java.ladders.IntegerArray;
 
 import java.util.ArrayList;
 

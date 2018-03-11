@@ -1,4 +1,4 @@
-package binarytree;
+package main.java.ladders.binarytree;
 
 import java.util.ArrayList;
 import java.util.Stack;

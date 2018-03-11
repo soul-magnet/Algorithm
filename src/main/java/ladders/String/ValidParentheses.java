@@ -1,4 +1,4 @@
-package Ladders;
+package main.java.ladders.String;
 
 import java.util.Scanner;
 import java.util.Stack;

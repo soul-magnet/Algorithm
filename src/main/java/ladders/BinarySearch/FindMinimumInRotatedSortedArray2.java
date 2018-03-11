@@ -1,4 +1,4 @@
-package BinarySearch;
+package main.java.ladders.BinarySearch;
 /**
  * 160. Find Minimum in Rotated Sorted Array II - Medium - Optional
 
@@ -27,7 +27,7 @@ Medium Search in Rotated Sorted Array II 40 %
  * if the left-most element and the right most element are equal.  If they are equal we can simply 
  * drop one of them. 
  * */
-public class FindMinimumInRotatedSortedArrayII {
+public class FindMinimumInRotatedSortedArray2 {
 	/**
      * @param num: a rotated sorted array
      * @return: the minimum number in the array

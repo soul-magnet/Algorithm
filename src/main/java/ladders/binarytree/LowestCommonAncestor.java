@@ -1,15 +1,24 @@
-package binarytree;
+package main.java.ladders.binarytree;
 
 import java.util.ArrayList;
 
 import DataStructure.TreeNode;
 
-/*
- *Given the root and two nodes in a Binary Tree. 
- *Find the lowest common ancestor(LCA) of the two nodes.
- *The lowest common ancestor is the node with largest depth which is the ancestor of both nodes. 
- *
- *For the following binary tree:
+/**
+ * 578. Lowest Common Ancestor III - Medium - Required
+ Description
+ Notes
+ Testcase
+ Judge
+Given the root and two nodes in a Binary Tree. Find the lowest common ancestor(LCA) of the two nodes.
+The lowest common ancestor is the node with largest depth which is the ancestor of both nodes.
+Return null if LCA does not exist.
+
+ Notice
+node A or node B may not exist in tree.
+
+Example
+For the following binary tree:
 
   4
  / \
@@ -22,8 +31,15 @@ LCA(5, 6) = 7
 
 LCA(6, 7) = 7
 
-* Analysis: Compare root with p and q, then decide which way to go.
-* There’s only three cases you need to consider.
+Tags: LintCode Copyright Binary Tree LinkedIn Facebook
+
+Related Problems 
+Easy Lowest Common Ancestor II 36 %
+Medium Lowest Common Ancestor 40 %
+ * 
+ * */
+/** Analysis: Compare root with p and q, then decide which way to go.
+* There is only three cases you need to consider.
  	1.Both nodes are to the left of the tree.
 	2.Both nodes are to the right of the tree.
 	3.One node is on the left while the other is on the right.

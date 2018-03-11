@@ -1,4 +1,4 @@
-package Ladders;
+package main.java.ladders.matrix;
 
 import java.util.ArrayList;
 import java.util.Arrays;

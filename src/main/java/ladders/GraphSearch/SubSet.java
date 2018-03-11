@@ -1,12 +1,10 @@
-package GraphSearch;
+package main.java.ladders.GraphSearch;
 
 import java.util.ArrayList;
 import java.util.Collections;
 
-/*
- * Given a set of distinct integers, return all possible subsets.
+/*Given a set of distinct integers, return all possible subsets.
 
-Have you met this question in a real interview? Yes
 Example
 If S = [1,2,3], a solution is:
 
@@ -67,5 +65,28 @@ public class SubSet {
 			tempList.remove(tempList.size() -1);
 		}
 	}
+	
+	/////////////////////////////////////
+//	public ArrayList<ArrayList<Integer>> subsets(ArrayList<Integer> S){
+//		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
+//		result.add(new ArrayList<Integer>());
+//		
+//		if (S == null || S.size() == 0){
+//			return result;
+//		}
+//		Collections.sort(S);
+//		helper(result, S, new ArrayList<Integer>(), 0);
+//		return result;
+//	}
+//	
+//	private void helper(ArrayList<ArrayList<Integer>> result, ArrayList<Integer> S,ArrayList<Integer> cur, int i){
+//		for (int j = i; j < S.size(); j++){
+//			cur.add(S.get(j));
+//			result.add(new ArrayList<Integer>(cur));
+//			helper(result, S, cur, j + 1);
+//			cur.remove(S.get(j));
+//		}
+//	}
+	
 
 }
