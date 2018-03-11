@@ -1,20 +1,21 @@
 package LinkedList;
-/* Merge two sorted (ascending) linked lists and 
- * return it as a new sorted list. 
- * The new sorted list should be made by splicing together 
- * the nodes of the two lists and sorted in ascending order.
+
+import DataStructure.ListNode;
+
+/**
+ * 165. Merge Two Sorted Lists - Easy - Required
+
+Merge two sorted (ascending) linked lists and return it as a new sorted list. 
+The new sorted list should be made by splicing together the nodes of the two lists and sorted in ascending order.
+
+Example
+Given 1->3->8->11->15->null, 2->null , return 1->2->3->8->11->15->null.
+
+Tags 
+Linked List LinkedIn
+Related Problems 
+Easy Merge Two Sorted Arrays 35 %
  * 
- * Example: Given 1->3->8->11->15->null, 2->null , 
- * return 1->2->3->8->11->15->null.
- * 
- * Analysis: 
- * 1. The list1 is empty, then the result is list2.
- * 2. current node in list1 greater than in list2, 
- *    insert current element in list2 before current node of list1
- * 3. Current element in list1 smaller than in list2, go to the next element
- *    in list1 and compare again 
- *    
- *    Step 2 and 3 are in the loop, until list is is empty.
  * */
 /**
  * Definition for ListNode.

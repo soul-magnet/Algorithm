@@ -1,9 +1,20 @@
-package LinkedList;
-/* 
- * Given a list, rotate the list to the right by k places, 
- * where k is non-negative.
- * Example: Given 1->2->3->4->5 and k = 2, return 4->5->1->2->3.
- * Analysis:
+package main.java.ladders.LinkedList;
+/**
+ * 170. Rotate List - Easy
+
+Given a list, rotate the list to the right by k places, where k is non-negative.
+
+Example
+Given 1->2->3->4->5 and k = 2, return 4->5->1->2->3.
+
+Tags: Basic Implementation Linked List
+Related Problems 
+Easy Rotate Words 13 %
+Hard Reverse Nodes in k-Group 35 %
+Easy Rotate String 19 %
+ * */
+
+/* Analysis:
  * The idea is to get the whole length of the list, 
  * then compute the rotate position.
  * ANd cut the list from the rotate position, link the front 

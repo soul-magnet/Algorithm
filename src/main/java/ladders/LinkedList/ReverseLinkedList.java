@@ -1,7 +1,25 @@
-package LinkedList;
-/* Reverse a linked list.
- * Example: For linked list 1->2->3, the reversed linked list is 3->2->1
- * Challenge: Reverse it in-place and in one-pass
+package main.java.ladders.LinkedList;
+/**
+ * 35. Reverse Linked List - Easy
+
+Reverse a linked list.
+ 
+Example
+For linked list 1->2->3, the reversed linked list is 3->2->1
+
+Challenge 
+Reverse it in-place and in one-pass
+
+Tags: Linked List Facebook Uber
+
+Related Problems 
+Easy Reverse Array 48 %
+Medium Add Two Numbers II 24 %
+Medium Binary Tree Flipping 42 %
+Medium Palindrome Linked List 29 %
+Hard Reverse Nodes in k-Group 35 %
+Easy Reverse Words in a String 25 %
+Medium Reverse Linked List II 30 %
  * */
 /**
  * Definition for ListNode.

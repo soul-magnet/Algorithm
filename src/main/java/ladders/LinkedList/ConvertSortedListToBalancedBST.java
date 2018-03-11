@@ -1,16 +1,23 @@
-package LinkedList;
+package main.java.ladders.LinkedList;
 
-import DataStructure.TreeNode;
+/**
+ * 106. Convert Sorted List to Balanced BST - Medium
 
-/* Given a singly linked list where elements are sorted in ascending order,
- * convert it to a height balanced BST.
+Given a singly linked list where elements are sorted in ascending order, convert it to a height balanced BST.
 
- * Example: 
+Have you met this question in a real interview? 
+Example
                2
 1->2->3  =>   / \
              1   3
-             
-*Analysis:
+Tags: Recursion Linked List
+
+Related Problems 
+Easy Flatten Binary Tree to Linked List 33 %
+Easy Convert Sorted Array to Binary Search Tree With Minimal Height 32 %
+Medium Convert Binary Search Tree to Doubly Linked List 30 %
+ * */
+/*Analysis:
 *If you are given an array, the problem is quite straightforward. 
 *But things get a little more complicated when you have a singly linked list
 *instead of an array. Now you no longer have random access to an element in O(1)
@@ -38,7 +45,7 @@ import DataStructure.TreeNode;
  *     }
  * }
  */ 
-public class ConvertSortedListToBST {
+public class ConvertSortedListToBalancedBST {
 	/**
      * @param head: The first node of linked list.
      * @return: a tree node

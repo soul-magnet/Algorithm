@@ -1,10 +1,28 @@
-package LinkedList;
-/*
- * Given a linked list, return the node where the cycle begins. 
- * If there is no cycle, return null.
- * Example: Given -21->10->4->5, tail connects to node index 1
+package main.java.ladders.LinkedList;
 
-Challenge: Follow up: Can you solve it without using extra space?
+/**
+ * 103. Linked List Cycle II - Hard - Required
+
+Given a linked list, return the node where the cycle begins.
+
+If there is no cycle, return null.
+
+Have you met this question in a real interview? 
+Example
+Given -21->10->4->5, tail connects to node index 1，return 10
+
+Challenge 
+Follow up:
+
+Can you solve it without using extra space?
+
+Tags 
+Two Pointers Linked List
+Related Problems 
+Medium Find the Duplicate Number 33 %
+Medium Intersection of Two Linked Lists 39 %
+ * */
+/*Challenge: Follow up: Can you solve it without using extra space?
 Analysis: This problem can be viewed as two major steps:
 	1. Detect whether the loop exists in the linked list
 	2. Find the loop start node if loop exists. 
@@ -27,7 +45,7 @@ Analysis: This problem can be viewed as two major steps:
  *     }
  * }
  */ 
-public class LinkedListCycleII {
+public class LinkedListCycle2 {
 	 /**
      * @param head: The first node of linked list.
      * @return: The node where the cycle begins. 

@@ -1,13 +1,25 @@
-package LinkedList;
+package main.java.ladders.LinkedList;
 
 import java.util.HashMap;
 
-/* A linked list is given such that each node contains an additional 
- * random pointer which could point to any node in the list or null.
- * Return a deep copy of the list.
- * Challenge: Could you solve it with O(1) space?
- * 
- * Analysis: 
+/**
+ * 105. Copy List with Random Pointer - Medium - Required
+
+A linked list is given such that each node contains an additional random pointer 
+which could point to any node in the list or null.
+
+Return a deep copy of the list.
+
+Example
+Challenge 
+Could you solve it with O(1) space?
+
+Tags: Hash Table Linked List Uber
+Related Problems 
+Easy Clone Binary Tree 47 %
+ * */
+
+/*  Analysis: 
  * 1. copy every node, i.e. duplicate every node and insert it to the list
  * 2. copy random pointers for all newly created nodes
  * 3. break the list to two, decomposed to two independent lists

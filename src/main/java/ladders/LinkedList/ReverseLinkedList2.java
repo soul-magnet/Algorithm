@@ -1,10 +1,24 @@
-package LinkedList;
-/*
- * Reverse a linked list from position m to n.
- * Example: Given 1->2->3->4->5->NULL, m = 2 and n = 4, return 1->4->3->2->5->NULL.
- * Note: Given m, n satisfy the following condition: 1 ≤ m ≤ n ≤ length of list.
- * Challenge: Reverse it in-place and in one-pass
- * 
+package main.java.ladders.LinkedList;
+/**
+ * 36. Reverse Linked List II - Medium 
+
+Reverse a linked list from position m to n.
+
+ Notice
+Given m, n satisfy the following condition: 1 ≤ m ≤ n ≤ length of list.
+
+Have you met this question in a real interview? 
+Example
+Given 1->2->3->4->5->NULL, m = 2 and n = 4, return 1->4->3->2->5->NULL.
+
+Challenge: Reverse it in-place and in one-pass
+
+Tags 
+Linked List
+Related Problems 
+Hard Reverse Nodes in k-Group 35 %
+Easy Reverse Words in a String 25 %
+Easy Reverse Linked List 40 %
  * */
 
 /**
@@ -18,7 +32,7 @@ package LinkedList;
  *     }
  * }
  */
-public class ReverseLinkedListII {
+public class ReverseLinkedList2 {
 	/**
      * @param ListNode head is the head of the linked list 
      * @oaram m and n

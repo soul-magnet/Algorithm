@@ -1,9 +1,22 @@
-package LinkedList;
-/*
- * Sort a linked list in O(n log n) time using constant space complexity.
- * Example: Given 1-3->2->null, sort it to 1->2->3->null.
- * 
+package main.java.ladders.LinkedList;
+/**
+ * 98. Sort List - Medium - Required
+
+Sort a linked list in O(n log n) time using constant space complexity.
+
+Have you met this question in a real interview? 
+Example
+Given 1->3->2->null, sort it to 1->2->3->null.
+
+Challenge 
+Solve it by merge sort & quick sort separately.
+
+Tags: Linked List
+
+Related Problems 
+Easy Insertion Sort List 31 %
  * */
+
 /**
  * Definition for ListNode.
  * public class ListNode {

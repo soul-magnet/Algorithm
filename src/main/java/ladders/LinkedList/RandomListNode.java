@@ -1,4 +1,4 @@
-package LinkedList;
+package main.java.ladders.LinkedList;
 
 public class RandomListNode {
 	int label;

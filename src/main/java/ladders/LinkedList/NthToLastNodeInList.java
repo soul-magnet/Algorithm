@@ -1,12 +1,19 @@
-package LinkedList;
+package main.java.ladders.LinkedList;
 
-import DataStructure.ListNode;
+/**
+ * 166. Nth to Last Node in List - Easy
 
-/* Find the nth to last element of a singly linked list. 
- * The minimum number of nodes in list is n.
- * Example: Given a List  3->2->1->5->null and n = 2, 
- * return node  whose value is 1.
- * Analysis: 
+Find the nth to last element of a singly linked list. 
+
+The minimum number of nodes in list is n.
+
+Example
+Given a List  3->2->1->5->null and n = 2, return node  whose value is 1.
+
+Tags: Linked List Cracking The Coding Interview
+ * */
+
+/* Analysis: 
  * 1. Find the nth node in normal order
  * 2. Have a head at index0
  * 3. Move both head and nth node. When nth node hit null/end, 

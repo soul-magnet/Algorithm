@@ -1,13 +1,29 @@
-package LinkedList;
-/*
- * Given a linked list, remove the nth node from the end of list and 
- * return its head.
- * Example: Given linked list: 1->2->3->4->5->null, and n = 2.
- * After removing the second node from the end, the linked list becomes 1->2->3->5->null.
- * Note: The minimum number of nodes in list is n.
+package main.java.ladders.LinkedList;
 
-Challenge: O(n) time
- * Analysis:
+/**
+ * 174. Remove Nth Node From End of List - Easy
+
+Given a linked list, remove the nth node from the end of list and return its head.
+
+ Notice
+The minimum number of nodes in list is n.
+
+
+Example
+Given linked list: 1->2->3->4->5->null, and n = 2.
+
+After removing the second node from the end, the linked list becomes 1->2->3->5->null.
+
+Challenge 
+Can you do it without getting the length of the linked list?
+
+Tags: Two Pointers Linked List
+
+Related Problems 
+Naive Middle of Linked List 41 %
+Easy Delete Node in the Middle of Singly Linked List 48 %
+ * */
+/* Analysis:
  * Maintain two pointers; reference pointer and main pointer, 
  * initialize both reference pointer and main pointer to head.
  * First move reference pointer to n nodes from head

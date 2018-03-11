@@ -1,9 +1,18 @@
-package LinkedList;
-/*
- * Implement an algorithm to delete a node in the middle of a singly linked list, 
- * given only access to that node.
- * Example: Given 1->2->3->4, and node 3. return 1->2->4
+package main.java.ladders.LinkedList;
+/**
+ * 372. Delete Node in the Middle of Singly Linked List - Easy
+
+Implement an algorithm to delete a node in the middle of a singly linked list, given only access to that node.
+
+Example
+Linked list is 1->2->3->4, and given node 3, delete the node in place 1->2->4
+
+Tags 
+Linked List Cracking The Coding Interview
+Related Problems 
+Easy Remove Nth Node From End of List 30 %
  * */
+
 /**
  * Definition for ListNode.
  * public class ListNode {

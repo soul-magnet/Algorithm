@@ -1,15 +1,21 @@
-package LinkedList;
+package main.java.ladders.LinkedList;
 
 import java.util.ArrayList;
 import java.util.Comparator;
 import java.util.List;
 import java.util.PriorityQueue;
 import java.util.Queue;
+/**
+ * 
+ * 104. Merge k Sorted Lists - Medium
 
-/*
- * Merge k sorted linked lists and return it as one sorted list.
- * Analyze and describe its complexity.
- * Given lists:
+Merge k sorted linked lists and return it as one sorted list.
+
+Analyze and describe its complexity.
+
+Example
+Given lists:
+
 [
   2->4->null,
   null,
@@ -17,7 +23,14 @@ import java.util.Queue;
 ],
 return -1->2->4->null.
 
-* Analysis:
+Tags: Twitter LinkedIn Linked List Airbnb Facebook Priority Queue Divide and Conquer Heap Uber Google
+Related Problems 
+Medium Merge Number 35 %
+Medium Merge k Sorted Arrays 27 %
+Easy Merge Two Sorted Arrays 35 %
+Medium Ugly Number II 24 %
+ * */
+/*Analysis:
 * 
 * Use divide and conquer. Left and right respectively recursive call Merge K 
 * sorted list, and then use the merge linked list combined.
@@ -58,6 +71,11 @@ return -1->2->4->null.
  * }
  */ 
 public class MergeKSortedList {
+	/**
+     * @param lists: a list of ListNode
+     * @return: The head of one sorted list.
+     */
+	
 	// Solution 1
 	public ListNode mergeKList(List<ListNode>lists){
 		if (lists.size() == 0){
