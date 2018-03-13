@@ -1,4 +1,4 @@
-package main.java.ladders.dataStructure;
+package main.java.ladders.PriorityQueue;
 
 import java.util.ArrayList;
 import java.util.Comparator;

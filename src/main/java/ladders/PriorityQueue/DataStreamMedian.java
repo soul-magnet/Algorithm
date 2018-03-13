@@ -1,4 +1,4 @@
-package Ladder3.DataStructure_II;
+package main.java.ladders.PriorityQueue;
 
 import java.util.Collections;
 import java.util.Comparator;
