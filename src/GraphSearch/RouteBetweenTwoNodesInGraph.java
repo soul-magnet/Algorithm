@@ -4,11 +4,14 @@ import java.util.ArrayList;
 import java.util.HashSet;
 import java.util.Set;
 import java.util.Stack;
+/**
+ * 176. Route Between Two Nodes in Graph - Medium
+ * 
+Given a directed graph, design an algorithm to find out whether there is a route between two nodes.
 
-/*
- * Given a directed graph, design an algorithm to find out 
- * whether there is a route between two nodes.
- * Example: Given graph:
+Example
+Given graph:
+
 A----->B----->C
  \     |
   \    |
@@ -16,9 +19,15 @@ A----->B----->C
     \  v
      ->D----->E
 for s = B and t = E, return true
+
 for s = D and t = C, return false
 
-*/
+Tags: Cracking The Coding Interview Depth First Search Breadth First Search
+
+Related Problems 
+Medium Parser 23 %
+Medium Clone Graph 29 %
+ * */
 
 /**
  * Definition for Directed graph.
@@ -59,6 +68,33 @@ public class RouteBetweenTwoNodesInGraph {
 					return true;
 				}
 				stack.push(neighbor);
+			}
+		}
+		return false;
+	}
+	
+	//////////////////////////////////////////////
+	public boolean hasRoute(ArrayList<DirectedGraphNode> graph,
+            DirectedGraphNode s, DirectedGraphNode t) {
+		if (s == t)
+			return true;
+		HashSet<DirectedGraphNode> set = new HashSet<>();
+		Stack<DirectedGraphNode> stack = new Stack<>();
+		set.add(s);
+		stack.push(s);
+		while (!stack.isEmpty()) {
+			DirectedGraphNode crt = stack.pop();
+			for (DirectedGraphNode neighbor : crt.neighbors) {
+				if (neighbor == t) {
+					return true;
+				}
+				if (set.contains(neighbor)) {
+					continue;
+				}
+
+				set.add(neighbor);
+				stack.push(neighbor);
+
 			}
 		}
 		return false;

@@ -4,13 +4,15 @@ import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
-import BinarySearch.TreeNode;
 
 
-/**
- * Given a binary tree, return the level order traversal of its nodes' 
- * values. (ie, from left to right, level by level).
- * Example: Given binary tree {3,9,20,#,#,15,7},
+/** 69. Binary Tree Level Order Traversal - Easy
+ 
+Given a binary tree, return the level order traversal of its nodes' values. 
+(ie, from left to right, level by level).
+
+Example
+Given binary tree {3,9,20,#,#,15,7},
 
     3
    / \
@@ -26,7 +28,15 @@ return its level order traversal as:
   [9,20],
   [15,7]
 ]
-Challenge: Using only 1 queue to implement it.
+Challenge 
+Challenge 1: Using only 1 queue to implement it.
+
+Challenge 2: Use DFS algorithm to do it.
+
+Tags: LinkedIn Facebook Microsoft Binary Tree Traversal Queue Binary Tree Breadth First Search Uber
+
+Related Problems 
+Medium Binary Tree Vertical Order Traversal 31 %
 */
 
 

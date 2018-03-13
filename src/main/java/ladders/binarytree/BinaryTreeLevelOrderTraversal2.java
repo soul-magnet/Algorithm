@@ -1,15 +1,19 @@
-package binarytree;
+package main.java.ladders.binarytree;
 
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
 
 import DataStructure.TreeNode;
+/**
+ * 
+ * 70. Binary Tree Level Order Traversal II - Medium
 
-/*
- * Given a binary tree, return the bottom-up level order traversal of its nodes' values. 
- * (ie, from left to right, level by level from leaf to root).
- * Given binary tree {3,9,20,#,#,15,7},
+Given a binary tree, return the bottom-up level order traversal of its nodes' values. 
+(ie, from left to right, level by level from leaf to root).
+
+Example
+Given binary tree {3,9,20,#,#,15,7},
 
     3
    / \
@@ -25,7 +29,13 @@ return its bottom-up level order traversal as:
   [9,20],
   [3]
 ]
- *Analysis:First solution is comes with only one queue as in BSTLevel Order traversal I
+Tags: Queue Binary Tree Binary Tree Traversal Breadth First Search
+
+Related Problems 
+Medium Search Graph Nodes 45 %
+
+*/
+/*Analysis:First solution is comes with only one queue as in BSTLevel Order traversal I
  *This is another approach;
  *Maintain a stack and queue. Instead of printing put the result in stack
  *Finally print contents of the stack 

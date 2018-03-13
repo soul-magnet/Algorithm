@@ -18,7 +18,8 @@ import java.util.Queue;
  */
 
 
-/**Given a undirected graph, a node and a target, 
+/**618. Search Graph Nodes - Medium
+ * Given a undirected graph, a node and a target, 
  * return the nearest node to given node which value of it is target, 
  * return NULL if you can't find.
 

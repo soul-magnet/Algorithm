@@ -26,7 +26,7 @@ Related Problems
 Medium Nearest Exit 31 %
 Hard Build Post Office II 27 %*/
 
-public class BuildPostOfficeI {
+public class BuildPostOffice {
 	
 	//Using Manhattan Distance
 	public static int shortestDistance(int[][] grid) {
