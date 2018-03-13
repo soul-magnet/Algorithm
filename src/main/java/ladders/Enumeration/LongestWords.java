@@ -1,4 +1,4 @@
-package main.java.ladders.String;
+package main.java.ladders.Enumeration;
 
 import java.util.ArrayList;
 

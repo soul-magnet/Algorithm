@@ -1,4 +1,4 @@
-package main.java.ladders.matrix;
+package main.java.ladders.Enumeration;
 
 import java.util.HashMap;
 import java.util.Map;
