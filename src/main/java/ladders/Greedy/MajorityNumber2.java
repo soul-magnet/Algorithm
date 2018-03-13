@@ -1,14 +1,33 @@
-package Greedy;
+package main.java.ladders.Greedy;
 
 import java.util.ArrayList;
+/**
+ * 47. Majority Number II - Medium
 
-/* Given an array of integers, the majority number is the number 
- * that occurs more than 1/3 of the size of the array.Find it.
- * Given [1, 2, 1, 2, 1, 3, 3], return 1.
- * Note: There is only one majority number in the array.
- * Challenge: O(n) time and O(1) extra space.
- * 
- * Analysis : As there could be at most 2 elements occurring more than 1 / 3 of the array, 
+Given an array of integers, the majority number is the number that occurs more than 1/3 of the size of the array.
+
+Find it.
+
+ Notice
+There is only one majority number in the array.
+
+Example
+Given [1, 2, 1, 2, 1, 3, 3], return 1.
+
+Challenge 
+O(n) time and O(1) extra space.
+
+Tags: Enumeration LintCode Copyright Greedy Zenefits
+
+Related Problems 
+Medium Single Number III 36 %
+Medium Single Number II 40 %
+Easy Single Number 46 %
+Medium Majority Number III 30 %
+Medium Majority Number II 31 %
+Easy Majority Number 43 %
+ * */
+/* Analysis : As there could be at most 2 elements occurring more than 1 / 3 of the array, 
  * we have 2 slots for majority number candidates. Each number votes like this:
  *  - If it is one of the majority number candidates, it votes positive to itself, otherwise
  	- If there is one available majority number slot, it gets the slot and votes positive for itself,
@@ -16,7 +35,7 @@ import java.util.ArrayList;
   At last, at least one of the two majority numbers must be more than 1 / 3 of the array.
  * 
  * */
-public class MajorityNumberII {
+public class MajorityNumber2 {
 	
 	/**
      * @param nums: A list of integers

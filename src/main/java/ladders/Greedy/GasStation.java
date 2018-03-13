@@ -1,19 +1,28 @@
-package Greedy;
-/*
- * There are N gas stations along a circular route, 
- * where the amount of gas at station i is gas[i].
- * You have a car with an unlimited gas tank and 
- * it costs cost[i] of gas to travel from station i to its next station (i+1). 
- * You begin the journey with an empty tank at one of the gas stations.
- * Return the starting gas station's index if you can travel around the circuit once, 
- * otherwise return -1.
- * 
- * Example: Given 4 gas stations with gas[i]=[1,1,3,1], 
- * and the cost[i]=[2,2,1,1]. The starting gas station's index is 2.
- * Note: The solution is guaranteed to be unique.
- * Challenge: O(n) time and O(1) extra space
- * 
- * Analysis:
+package main.java.ladders.Greedy;
+
+/**
+ * 187. Gas Station - Medium
+
+There are N gas stations along a circular route, where the amount of gas at station i is gas[i].
+
+You have a car with an unlimited gas tank and it costs cost[i] of gas to travel from station i to 
+its next station (i+1). You begin the journey with an empty tank at one of the gas stations.
+
+Return the starting gas station's index if you can travel around the circuit once, otherwise return -1.
+
+ Notice
+The solution is guaranteed to be unique.
+
+Example
+Given 4 gas stations with gas[i]=[1,1,3,1], and the cost[i]=[2,2,1,1]. The starting gas station's index is 2.
+
+Challenge 
+O(n) time and O(1) extra space
+
+Tags 
+Greedy
+ * */
+/* Analysis:
  * To solve this problem we need to understand and use the following 2 facts:
  * 1) if the sum of gas >= the sum of cost,then the circle can be completed.
  * 2) if A cannot reach C in the sequence of a -> b -> c, then B can not make it either.

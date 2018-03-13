@@ -1,10 +1,25 @@
-package Greedy;
-/*
- * Given 3*n + 1 numbers, every numbers occurs triple times except one, find it. 
- * Example: Given [1,1,2,3,3,3,2,2,4,1] return 4
- * Challenge: One-pass, constant extra space.
- * 
- * Analysis: 
+package main.java.ladders.Greedy;
+/**
+ * 83. Single Number II - Medium
+
+Given 3*n + 1 numbers, every numbers occurs triple times except one, find it.
+
+Example
+Given [1,1,2,3,3,3,2,2,4,1] return 4
+
+Challenge 
+One-pass, constant extra space.
+
+Tags: Greedy
+Related Problems 
+Medium Single Number IV 35 %
+Medium Single Number III 36 %
+Easy Single Number 46 %
+Medium Majority Number III 30 %
+Medium Majority Number II 31 %
+Easy Majority Number 43 %
+ * */
+/* Analysis: 
  * The general idea of this problem is to consider all the number bit by bit, 
  * count the occurrence of '1'in each bit. To get the result, check if the number
  * can be divided by 3(mod3 = 0), put '0' if true and '1' otherwise.
@@ -42,8 +57,21 @@ t1 = 000011, t2 = 100100, t3 = 001000
 Reference: http://yucoding.blogspot.com/2014/10/single-number-ii.html
  * */
 
+/*         1110
+*         1110
+*         1110
+*         1001
+*         _____
+*         4331 对每一位进行求和
+*         1001 对每一位的和做%3运算，来消去所有重复3次的数
+*/
+
 // bit manipulation
-public class SingleNumberII {
+public class SingleNumber2 {
+	/**
+	 * @param A : An integer array
+	 * @return : An integer 
+	 */
 	public int singleNumberII(int[] A){
 		if (A == null || A.length == 0){
 			return -1;

@@ -1,4 +1,4 @@
-package main.java.ladders.HighFrequency;
+package main.java.ladders.Array;
 
 import java.util.ArrayList;
 

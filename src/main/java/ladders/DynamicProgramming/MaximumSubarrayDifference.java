@@ -1,7 +1,31 @@
-package DynamicProgramming;
+package main.java.ladders.DynamicProgramming;
 
 import java.util.ArrayList;
+/**
+ * 45. Maximum Subarray Difference - Medium
 
+Given an array with integers.
+
+Find two non-overlapping subarrays A and B, which |SUM(A) - SUM(B)| is the largest.
+
+Return the largest difference.
+
+ Notice
+The subarray should contain at least one number
+
+Example
+For [1, 2, -3, 1], return 6.
+
+Challenge 
+O(n) time and O(n) space.
+
+Tags: Greedy Enumeration LintCode Copyright Array Subarray Forward-Backward Traversal
+
+Related Problems 
+Medium Maximum Product Subarray 30 %
+Medium Best Time to Buy and Sell Stock III 27 %
+Hard Maximum Subarray III 25 %
+ * */
 /*
  * Given an array with integers.
  * Find two non-overlapping subarrays A and B, 

@@ -1,14 +1,30 @@
-package Greedy;
+package main.java.ladders.Greedy;
 
 import java.util.HashSet;
 import java.util.Iterator;
+/**
+ * 82. Single Number - Easy
 
-/*
- Given 2*n + 1 numbers, every numbers occurs twice except one, find it.
- Example: Given [1,2,2,1,3,4,3], return 4
- Challenge: One-pass, constant extra space.
- 
- Analysis: 
+Given 2*n + 1 numbers, every numbers occurs twice except one, find it.
+
+Example
+Given [1,2,2,1,3,4,3], return 4
+
+Challenge 
+One-pass, constant extra space.
+
+Tags: Greedy
+
+Related Problems 
+Medium Single Number IV 35 %
+Medium Find the Duplicate Number 33 %
+Medium Single Number III 36 %
+Medium Single Number II 40 %
+Medium Majority Number III 30 %
+Medium Majority Number II 31 %
+Easy Majority Number 43 %
+ * */
+/* Analysis: 
  - The requirement is O(n) time and O(1) space.
  - Thus, the "first sort and then find" way is not working
  

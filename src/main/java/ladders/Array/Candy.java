@@ -1,4 +1,4 @@
-package main.java.ladders.Greedy;
+package main.java.ladders.Array;
 
 import java.util.Arrays;
 

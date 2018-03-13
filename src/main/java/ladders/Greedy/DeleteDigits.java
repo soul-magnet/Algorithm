@@ -1,14 +1,28 @@
-package Greedy;
-/*
- * Given string A representative a positive integer which has N digits, 
- * remove any k digits of the number, the remaining digits are arranged 
- * according to the original order to become a new positive integer.
- * Find the smallest integer after remove k digits.
- * N <= 240 and k <= N,
- * Example: Given an integer A = "178542", k = 4
- * return a string "12"
- * 
- * Analysis: 
+package main.java.ladders.Greedy;
+/**
+ * 182. Delete Digits - Medium
+
+Given string A representative a positive integer which has N digits, remove any k digits of the number, 
+the remaining digits are arranged according to the original order to become a new positive integer.
+
+Find the smallest integer after remove k digits.
+
+N <= 240 and k <= N,
+
+Example
+Given an integer A = "178542", k = 4
+
+return a string "12"
+
+Tags: LintCode Copyright Greedy
+
+Related Problems 
+Medium Monotone Increasing Digits 26 %
+Medium Reorder array to construct the minimum number 18 %
+Medium Largest Number 19 %
+ * */
+
+/* Analysis: 
  * Go from left(most significant) to right, delete the first number that
  *  is larger than its succeeding number.
  * This equals replacing a larger number with a smaller number, at the most 

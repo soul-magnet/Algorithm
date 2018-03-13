@@ -1,6 +1,6 @@
 package main.java.ladders.BreadthFirstSearch;
 /**
- * 696. Course Schedule III 
+ * 696. Course Schedule III - Hard
 
 There are ·n· different online courses numbered from 1 to n. Each course has some duration(course length) t and 
 closed on dth day. A course should be taken continuously for t days and must be finished before or on the dth day. 
@@ -31,7 +31,7 @@ Related Problems
 Medium Course Schedule 23 %
 Medium Course Schedule II 21 %
  * */
-public class CourseScheduleIII {
+public class CourseSchedule3 {
 	/*
      * @param : duration and close day of each course
      * @return: the maximal number of courses that can be taken

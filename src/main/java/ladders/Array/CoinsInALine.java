@@ -1,4 +1,4 @@
-package main.java.ladders.Greedy;
+package main.java.ladders.Array;
 /**
  * 394. Coins in a Line - Medium
 
