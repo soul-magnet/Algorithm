@@ -1,17 +1,33 @@
-package DynamicProgramming;
-/*
- You are a professional robber planning to rob houses along a street. 
- Each house has a certain amount of money stashed, the only constraint 
- stopping you from robbing each of them is that adjacent houses have 
- security system connected and it will automatically contact the police 
- if two adjacent houses were broken into on the same night.
- Given a list of non-negative integers representing 
- the amount of money of each house, determine the maximum amount of money 
- you can rob tonight without alerting the police.
- Example: Given [3, 8, 4], return 8.
- Challenge: O(n) time and O(1) memory.
- 
- Analysis: Basic DP problem, description can be easily extracted as the following
+package main.java.ladders.DynamicProgramming;
+
+/**
+ * 392. House Robber - Medium
+
+You are a professional robber planning to rob houses along a street. 
+Each house has a certain amount of money stashed, 
+the only constraint stopping you from robbing each of them is that adjacent houses have security system connected 
+and it will automatically contact the police if two adjacent houses were broken into on the same night.
+
+Given a list of non-negative integers representing the amount of money of each house, 
+determine the maximum amount of money you can rob tonight without alerting the police.
+
+Example
+Given [3, 8, 4], return 8.
+
+Challenge 
+O(n) time and O(1) memory.
+
+Tags: Airbnb LinkedIn Dynamic Programming
+
+Related Problems 
+Medium House Robber III 31 %
+Medium House Robber II 28 %
+Medium Paint House 35 %
+Easy Paint Fence 30 %
+Naive Fibonacci 24 %
+Easy Climbing Stairs 31 %
+ * */
+/*Analysis: Basic DP problem, description can be easily extracted as the following
  Given an array of non-negative integers, find the maximum sum of a subset, 
  such that no elements is adjacent to the each other.
  

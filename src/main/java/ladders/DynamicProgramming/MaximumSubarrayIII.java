@@ -1,14 +1,33 @@
-package DynamicProgramming;
+package main.java.ladders.DynamicProgramming;
 
 import java.util.ArrayList;
+/**
+ * 43. Maximum Subarray III - Hard
 
-/*
- * Given an array of integers and a number k, 
- * find k non-overlapping subarrays which have the largest sum.
- * The number in each subarray should be contiguous.
- * Return the largest sum
- * Example: Given [-1,4,-2,3,-2,3], k=2, return 8
- * Note: The subarray should contain at least one number
+Given an array of integers and a number k, find k non-overlapping subarrays which have the largest sum.
+
+The number in each subarray should be contiguous.
+
+Return the largest sum.
+
+ Notice
+The subarray should contain at least one number
+
+Example
+Given [-1,4,-2,3,-2,3], k=2, return 8
+
+Tags: LintCode Copyright Subarray Array Dynamic Programming
+
+Related Problems 
+Hard Maximum Subarray V 30 %
+Medium Maximum Subarray IV 35 %
+Medium Best Time to Buy and Sell Stock III 27 %
+Medium Best Time to Buy and Sell Stock II 49 %
+Medium Best Time to Buy and Sell Stock 40 %
+Medium Maximum Subarray Difference 24 %
+Hard Maximum Subarray III 25 %
+Medium Maximum Subarray II 26 %
+Easy Maximum Subarray 38 %
  * */
 public class MaximumSubarrayIII {
 	/**

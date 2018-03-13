@@ -1,16 +1,26 @@
-package DynamicProgramming;
-/*
- * Given a 2D binary matrix filled with 0's and 1's, 
- * find the largest square containing all 1's and return its area.
- * For example, given the following matrix:
- * 1 0 1 0 0
- * 1 0 1 1 1
- * 1 1 1 1 1
- * 1 0 0 1 0
- * Return 4.
- *
- * 
- * Analysis: 
+package main.java.ladders.DynamicProgramming;
+
+/**
+ * 436. Maximal Square - Medium
+
+Given a 2D binary matrix filled with 0's and 1's, find the largest square containing all 1's and return its area.
+
+Example
+For example, given the following matrix:
+
+1 0 1 0 0
+1 0 1 1 1
+1 1 1 1 1
+1 0 0 1 0
+Return 4.
+
+Tags: Airbnb Dynamic Programming Facebook
+
+Related Problems 
+Easy Check Sum of Square Numbers 15 %
+Hard Maximal Rectangle 26 %
+ * */
+/* Analysis: 
  * Construct a sum matrix dp[r][c] for the given matrix[r][c]
  * a) Copy the first row and first column as it is from matrix[][] to dp[][]
  * b) For other entries, use the following use the expression to construct dp[][]

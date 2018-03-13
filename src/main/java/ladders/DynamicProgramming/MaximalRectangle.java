@@ -1,11 +1,30 @@
-package DynamicProgramming;
+package main.java.ladders.DynamicProgramming;
 
 import java.util.Stack;
 
-/*
- * Given a 2D binary matrix filled with 0's and 1's, 
- * find the largest rectangle containing all ones and return its area.
- * 
+/**
+ * 510. Maximal Rectangle - Hard
+
+Given a 2D boolean matrix filled with False and True, 
+find the largest rectangle containing all True and return its area.
+ 
+Example
+Given a matrix:
+
+[
+  [1, 1, 0, 0, 1],
+  [0, 1, 0, 0, 1],
+  [0, 0, 1, 1, 1],
+  [0, 0, 1, 1, 1],
+  [0, 0, 0, 0, 1]
+]
+return 6.
+
+Tags: Stack Array Dynamic Programming
+
+Related Problems 
+Medium Maximal Square 30 %
+Hard Largest Rectangle in Histogram 28 %
  * */
 public class MaximalRectangle {
 	 public int maximalRectangle(char[][] matrix) {

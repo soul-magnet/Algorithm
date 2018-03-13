@@ -1,13 +1,25 @@
-package DynamicProgramming;
+package main.java.ladders.DynamicProgramming;
 
 import java.util.Set;
+/**
+ * 107. Word Break - Medium
 
-/* Given a string s and a dictionary of words dict, 
- * determine if s can be break into a space-separated sequence of one or more dictionary words.
- * Given s = "lintcode", dict = ["lint", "code"].
- * Return true because "lintcode" can be break as "lint code".
- * 
- * Analysis: First thought is DFS, searching every dict elements, if matched
+Given a string s and a dictionary of words dict, 
+determine if s can be break into a space-separated sequence of one or more dictionary words.
+
+Example
+Given s = "lintcode", dict = ["lint", "code"].
+
+Return true because "lintcode" can be break as "lint code".
+
+Tags 
+String Dynamic Programming
+Related Problems 
+Medium Word Break III 33 %
+Easy Split String 21 %
+Hard Word Break II 20 %
+ * */
+/* Analysis: First thought is DFS, searching every dict elements, if matched
  * go to the next position of s, until find the last match. 
  * 
  * Consider a very long s has a bunch of "a" and other letters, and the dict

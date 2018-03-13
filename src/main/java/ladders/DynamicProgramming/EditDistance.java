@@ -1,14 +1,26 @@
-package DynamicProgramming;
-/*
- * Given two words word1 and word2, find the minimum number of steps 
- * required to convert word1 to word2. (each operation is counted as 1 step.)
- * You have the following 3 operations permitted on a word:
- * Insert a character
- * Delete a character
- * Replace a character
- * Given word1 = "mart" and word2 = "karma", return 3.
- * 
- * Analysis: if (str[i] == str[j])
+package main.java.ladders.DynamicProgramming;
+
+/**
+ * 119. Edit Distance - Medium
+
+Given two words word1 and word2, find the minimum number of steps required to convert word1 to word2. 
+(each operation is counted as 1 step.)
+
+You have the following 3 operations permitted on a word:
+
+Insert a character
+Delete a character
+Replace a character
+ 
+Example: Given word1 = "mart" and word2 = "karma", return 3.
+
+Tags 
+String Dynamic Programming
+Related Problems 
+Medium Edit Distance II 28 %
+Medium Longest Common Subsequence 39 %
+ * */
+/* Analysis: if (str[i] == str[j])
  * 				T[i][j] = T[i - 1][j - 1];
  * 			else 
  * 				T[i][j] = min(T[i - 1][j], T[i - 1][j - 1], T[i][j - 1]);

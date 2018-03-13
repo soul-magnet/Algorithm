@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package main.java.ladders.DynamicProgramming;
 /*
  * Given two strings, find the longest common subsequence (LCS).
  * Your code should return the length of LCS.

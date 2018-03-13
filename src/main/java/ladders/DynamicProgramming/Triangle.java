@@ -1,10 +1,18 @@
-package DynamicProgramming;
+package main.java.ladders.DynamicProgramming;
 
 import java.util.ArrayList;
+/**
+ * 109. Triangle - Easy - Required
+ * 
+Given a triangle, find the minimum path sum from top to bottom. 
+Each step you may move to adjacent numbers on the row below.
 
-/*Given a triangle, find the minimum path sum from top to bottom. 
- * Each step you may move to adjacent numbers on the row below.
- * For example, given the following triangle
+ Notice
+Bonus point if you are able to do this using only O(n) extra space, 
+where n is the total number of rows in the triangle.
+
+Example
+Given the following triangle:
 
 [
      [2],
@@ -14,11 +22,12 @@ import java.util.ArrayList;
 ]
 The minimum path sum from top to bottom is 11 (i.e., 2 + 3 + 5 + 1 = 11).
 
-Note: Bonus point if you are able to do this using only O(n) extra space, 
-where n is the total number of rows in the triangle.
+Tags: Dynamic Programming
 
-Analysis: From bottom to up, find the minimum adjacent indexes
+Related Problems 
+Easy Minimum Path Sum 35 %
  * */
+/*Analysis: From bottom to up, find the minimum adjacent indexes*/
 public class Triangle {
 	// Bottom-Up Search
 	public int minimumTotal(ArrayList<ArrayList<Integer>> triangle){
@@ -113,4 +122,37 @@ public class Triangle {
         }
         return answer;
     }*/
+	
+	 /**
+     * @param triangle: a list of lists of integers.
+     * @return: An integer, minimum path sum.
+     */
+      /*
+	    DP, SOL 2:
+	    f[j] 表示下一行第j列某点到最后底部的最短值。因为我们只需要下一行的这个值，所以我们使用一行的DP memory即可完成任务。
+
+第一步： 先计算出最后一排的最短值，实际上就是这一排本身的值。
+第二步：From bottom to up, 每一层的最短值只需要把自身值加上，并且取下层的左右邻接点的最小值。
+	    */
+//	    public int minimumTotal(List<ArrayList<Integer>> triangle) {
+//	        if (triangle == null || triangle.size() ==  0) {
+//	            return 0;
+//	        }
+//	        
+//	        int rows = triangle.size();
+//	        int[] D = new int[rows];
+//	        
+//	        for (int i = rows - 1; i >= 0; i--) {
+//	            // 注意：边界条件是 j <= i
+//	            for (int j = 0; j <= i; j++) {
+//	                if (i == rows - 1) {
+//	                    D[j] = triangle.get(i).get(j);
+//	                } else {
+//	                    D[j] = triangle.get(i).get(j) + Math.min(D[j], D[j + 1]);
+//	                }    
+//	            }
+//	        }
+//	        
+//	        return D[0];
+//	    }
 }

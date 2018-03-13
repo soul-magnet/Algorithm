@@ -1,9 +1,20 @@
-package DynamicProgramming;
-/*
- * Find the contiguous subarray within an array 
- * (containing at least one number) which has the largest product.
- * For example, given the array [2,3,-2,4], 
- * the contiguous subarray [2,3] has the largest product = 6.
+package main.java.ladders.DynamicProgramming;
+/**
+ * 191. Maximum Product Subarray - Medium 
+
+Find the contiguous subarray within an array (containing at least one number) which has the largest product.
+
+Example
+For example, given the array [2,3,-2,4], the contiguous subarray [2,3] has the largest product = 6.
+
+Tags 
+Subarray LinkedIn Dynamic Programming
+Related Problems 
+Medium Rogue Knight Sven 31 %
+Medium Best Time to Buy and Sell Stock 40 %
+Medium Maximum Subarray Difference 24 %
+Easy Minimum Subarray 37 %
+Medium Maximum Subarray II 26 %
  * */
 public class MaximumProductSubarray {
 	/**

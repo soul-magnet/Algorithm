@@ -1,18 +1,34 @@
-package DynamicProgramming;
-/*
- * There are n coins in a line. 
- * Two players take turns to take one or two coins from right side 
- * until there are no more coins left. The player who take the last coin wins.
- * Could you please decide the first play will win or lose?
- * Example: n = 1, return true.
- * 			n = 2, return true.
- * 			n = 3, return false.
- * 			n = 4, return true.
- * 			n = 5, return true.
- * Challenge: O(n) time and O(1) memory
- * 
- * Reference: http://articles.leetcode.com/2011/02/coins-in-line.html
- * 
+package main.java.ladders.DynamicProgramming;
+/**
+ * 394. Coins in a Line - Medium
+
+There are n coins in a line. 
+Two players take turns to take one or two coins from right side until there are no more coins left. 
+The player who take the last coin wins.
+
+Could you please decide the first play will win or lose?
+
+Example
+n = 1, return true.
+
+n = 2, return true.
+
+n = 3, return false.
+
+n = 4, return true.
+
+n = 5, return true.
+
+Challenge 
+O(n) time and O(1) memory
+
+Tags: Greedy Array Dynamic Programming Game Theory
+
+Related Problems 
+Medium Coins in a Line II 32 %
+ * */
+/* 
+ * Reference: http://articles.leetcode.com/2011/02/coins-in-line.html 
  * */
 public class CoinsInALine {
 	/**

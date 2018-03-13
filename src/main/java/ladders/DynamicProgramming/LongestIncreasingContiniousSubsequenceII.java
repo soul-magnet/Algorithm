@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package main.java.ladders.DynamicProgramming;
 /*
  * Give you an integer matrix (with row size n, column size m)，
  * find the longest increasing continuous subsequence in this matrix. 

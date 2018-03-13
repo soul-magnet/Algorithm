@@ -1,13 +1,23 @@
-package DynamicProgramming;
-/*
- * Given three strings: s1, s2, s3, determine whether s3 is formed 
- * by the interleaving of s1 and s2.
- * For s1 = "aabcc", s2 = "dbbca"
- * When s3 = "aadbbcbcac", return true.
- * When s3 = "aadbbbaccc", return false.
- * Challenge: O(n^2) time or better
- * 
- * Analysis: valid[i][j] means whether s1[0 ... i-1] and s2[0...j-1] could
+package main.java.ladders.DynamicProgramming;
+/**
+ * 29. Interleaving String - Medium
+
+Given three strings: s1, s2, s3, determine whether s3 is formed by the interleaving of s1 and s2.
+
+Example
+For s1 = "aabcc", s2 = "dbbca"
+
+When s3 = "aadbbcbcac", return true.
+When s3 = "aadbbbaccc", return false.
+Challenge 
+O(n2) time or better
+
+Tags:Longest Common Subsequence Dynamic Programming
+
+Related Problems 
+Medium Distinct Subsequences 32 %
+ * */
+/* Analysis: valid[i][j] means whether s1[0 ... i-1] and s2[0...j-1] could
  * construct s3[0...i+j-1]
  * As the algorithm goes row by row and we only need the saved information of the
  * previous row. We can use 1-dimensional DP to retrieve old data and 

@@ -1,4 +1,4 @@
-package DataStructure;
+package main.java.ladders.dataStructure;
 
 import java.util.HashMap;
 import java.util.HashSet;
@@ -21,7 +21,7 @@ Your algorithm should run in O(n) complexity.
 // we can use HashSet to add and remove elements. HashSet is implemented by using hash table.
 // Elements are not ordered. The add, remove and contains methods have constant time complexity O(1).
 
-public class LongestConsecutiveELements {
+public class LongestConsecutiveElements {
 	// if array is empty, return 0
 	public static int longestConsecutive(int[] num) {
 		if (num.length == 0) {

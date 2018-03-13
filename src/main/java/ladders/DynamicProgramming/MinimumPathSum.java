@@ -1,9 +1,18 @@
-package DynamicProgramming;
-/*
- * Given a m x n grid filled with non-negative numbers, 
- * find a path from top left to bottom right 
- * which minimizes the sum of all numbers along its path.
- * Note: You can only move either down or right at any point in time.
+package main.java.ladders.DynamicProgramming;
+/**
+ * 110. Minimum Path Sum - Easy - Required
+
+Given a m x n grid filled with non-negative numbers, 
+find a path from top left to bottom right which minimizes the sum of all numbers along its path.
+
+ Notice
+You can only move either down or right at any point in time.
+
+Tags: Dynamic Programming
+
+Related Problems 
+Easy Triangle 26 %
+Medium Binary Tree Maximum Path Sum 25 %
  * */
 public class MinimumPathSum {
 	/**

@@ -1,25 +1,38 @@
-package DynamicProgramming;
-/*
- * Follow up for "Unique Paths":
- * Now consider if some obstacles are added to the grids. 
- * How many unique paths would there be?
- * An obstacle and empty space is marked as 1 and 0 respectively in the grid.
- * For example: There is one obstacle in the middle of a 3x3 grid as illustrated below.
+package main.java.ladders.DynamicProgramming;
+/**
+ * 115. Unique Paths II - Easy - Required
+
+Follow up for "Unique Paths":
+
+Now consider if some obstacles are added to the grids. How many unique paths would there be?
+
+An obstacle and empty space is marked as 1 and 0 respectively in the grid.
+
+ Notice
+m and n will be at most 100.
+
+Have you met this question in a real interview? 
+Example
+For example,
+There is one obstacle in the middle of a 3x3 grid as illustrated below.
 
 [
   [0,0,0],
   [0,1,0],
   [0,0,0]
 ]
+The total number of unique paths is 2.
 
-*The total number of unique paths is 2.
-*Note: m and n will be at most 100.
-*/
-public class UniquePathsII {
+Tags: Array Dynamic Programming
+
+Related Problems 
+Hard Open the Lock 78 %
+Hard Unique Paths III 21 %
+ * */
+public class UniquePaths2 {
 	/**
      * @param obstacleGrid: A list of lists of integers
      * @return: An integer
-     * anlysis:
      */
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
     	if (obstacleGrid == null || obstacleGrid.length == 0)

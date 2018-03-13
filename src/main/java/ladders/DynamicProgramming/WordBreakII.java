@@ -1,4 +1,4 @@
-package DynamicProgramming;
+package main.java.ladders.DynamicProgramming;
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -6,17 +6,61 @@ import java.util.List;
 import java.util.Map;
 import java.util.Set;
 
-/*
- *Given a string s and a dictionary of words dict, 
- *add spaces in s to construct a sentence where each word is 
- *a valid dictionary word.
- *Return all such possible sentences.
- *For example, given s = "catsanddog",
- *dict = ["cat", "cats", "and", "sand", "dog"].
- *A solution is ["cats and dog", "cat sand dog"]. 
- *
- **/
+/**
+ * 582. Word Break II - Hard
+
+Given a string s and a dictionary of words dict, 
+add spaces in s to construct a sentence where each word is a valid dictionary word.
+
+Return all such possible sentences.
+ 
+Example
+Gieve s = lintcode,
+dict = ["de", "ding", "co", "code", "lint"].
+
+A solution is ["lint code", "lint co de"].
+
+Tags 
+Backtracking Dynamic Programming
+Related Problems 
+Medium Word Break III 33 %
+Easy Split String 21 %
+Medium Word Break 14 %
+ * */
 public class WordBreakII {
+	/*
+     * @param s: A string
+     * @param wordDict: A set of words.
+     * @return: All possible sentences.
+     */
+	public List<String> wordBreak(String s, Set<String> wordDict){
+		ArrayList<String> result = new ArrayList<String>();
+		if (s.length() == 0)
+			return result;
+		
+		boolean[][] isWord = new boolean[s.length()][s.length()];
+		for (int i = 0; i < s.length(); i++){
+			for (int j = i; j < s.length(); j++){
+				String word = s.substring(i, j + 1);
+				isWord[i][j] = wordDict.contains(word);
+			}
+		}
+		
+		boolean[] possible = new boolean[s.length() + 1];
+		possible[s.length()] = true;
+		for (int i = s.length() - 1; i >= 0; i--){
+			for (int j = i; j < s.length(); j++){
+				if (isWord[i][j] && possible[j + 1]){
+					possible[i] = true;
+					break;
+				}
+			}
+		}
+		List<Integer> path = new ArrayList<Integer>();
+		search(0, s, path, isWord, possible, result);
+		return result;
+	}
+	
 	private void search(int index, String s,
 			List<Integer>path, boolean[][]isWord,
 	        boolean[] possible,List<String>result){
@@ -44,34 +88,6 @@ public class WordBreakII {
 			path.remove(path.size() - 1);
 		}
 			
-	}
-	
-	public List<String> wordBreak(String s, Set<String> wordDict){
-		ArrayList<String> result = new ArrayList<String>();
-		if (s.length() == 0)
-			return result;
-		
-		boolean[][] isWord = new boolean[s.length()][s.length()];
-		for (int i = 0; i < s.length(); i++){
-			for (int j = i; j < s.length(); j++){
-				String word = s.substring(i, j + 1);
-				isWord[i][j] = wordDict.contains(word);
-			}
-		}
-		
-		boolean[] possible = new boolean[s.length() + 1];
-		possible[s.length()] = true;
-		for (int i = s.length() - 1; i >= 0; i--){
-			for (int j = i; j < s.length(); j++){
-				if (isWord[i][j] && possible[j + 1]){
-					possible[i] = true;
-					break;
-				}
-			}
-		}
-		List<Integer> path = new ArrayList<Integer>();
-		search(0, s, path, isWord, possible, result);
-		return result;
 	}
 	
 	// version 2: 

@@ -1,14 +1,28 @@
-package DynamicProgramming;
-/*
- * Given two strings, find the longest common substring.
- * Return the length of it.
- * Example: Given A = "ABCD", B = "CBCE", return 2.
- * Note: The characters in substring should occur continuously in original string. 
- * This is different with subsequence.
- * Challenge: O(n x m) time and memory.
- * 
- * Analysis: 
- * 
+package main.java.ladders.DynamicProgramming;
+/**
+ * 79. Longest Common Substring - Medium 
+
+Given two strings, find the longest common substring.
+
+Return the length of it.
+
+ Notice
+The characters in substring should occur continuously in original string. 
+This is different with subsequence.
+
+Example
+Given A = "ABCD", B = "CBCE", return 2.
+
+Challenge 
+O(n x m) time and memory.
+
+Tags 
+LintCode Copyright String
+Related Problems 
+Hard Longest Common Subsequence II 36 %
+Medium Longest Common Subsequence 39 %
+ * */
+/* Analysis:  
  * DP question. Update the max during building table.
  * */
 public class LongestCommonSubstring {

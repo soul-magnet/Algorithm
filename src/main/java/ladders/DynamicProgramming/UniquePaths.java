@@ -1,13 +1,26 @@
-package DynamicProgramming;
-/*
- * A robot is located at the top-left corner of a m x n grid 
- * (marked 'Start' in the diagram below).
- * The robot can only move either down or right at any point in time. 
- * The robot is trying to reach the bottom-right corner of the grid 
- * (marked 'Finish' in the diagram below).
- * How many possible unique paths are there?
- * Above is a 3 x 7 grid. How many possible unique paths are there?
- * 
+package main.java.ladders.DynamicProgramming;
+/**
+ * 114. Unique Paths - Easy - Required
+
+A robot is located at the top-left corner of a m x n grid.
+
+The robot can only move either down or right at any point in time. 
+The robot is trying to reach the bottom-right corner of the grid.
+
+How many possible unique paths are there?
+
+ Notice
+m and n will be at most 100.
+
+Have you met this question in a real interview? 
+Example
+Given m = 3 and n = 3, return 6.
+Given m = 4 and n = 5, return 35.
+
+Tags 
+Array Dynamic Programming
+Related Problems 
+Hard Unique Paths III 21 %
  * */
 
 public class UniquePaths {
