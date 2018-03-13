@@ -1,4 +1,4 @@
-package main.java.ladders.UnionFind;
+package main.java.ladders.Heap;
 /**
  * 130. Heapify - Medium -
 
