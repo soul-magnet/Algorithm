@@ -1,15 +1,24 @@
-package GraphSearch;
+package main.java.ladders.PermutationBasedDFS;
 
 import java.util.ArrayList;
+/**
+ * 
+ * 34. N-Queens II - Medium - Required
+ * 
+Follow up for N-Queens problem.
 
-/*
- * Follow up for N-Queens problem.
- * Now, instead outputting board configurations, 
- * return the total number of distinct solutions.
- * Example
- * For n=4, there are 2 distinct solutions.
+Now, instead outputting board configurations, return the total number of distinct solutions.
+
+Example
+For n=4, there are 2 distinct solutions.
+
+Tags: Recursion
+
+Related Problems 
+Medium Combinations 33 %
+Medium N-Queens 25 %
  * */
-public class NQueensII {
+public class NQueens2 {
 	/**
      * Calculate the total number of distinct N-Queen solutions.
      * @param n: The number of queens.

@@ -27,7 +27,7 @@ Medium Word Break III 33 %
 Easy Split String 21 %
 Medium Word Break 14 %
  * */
-public class WordBreakII {
+public class WordBreak2 {
 	/*
      * @param s: A string
      * @param wordDict: A set of words.

@@ -1,29 +1,38 @@
-package GraphSearch;
+package main.java.ladders.GraphSearch;
 
 import java.util.HashSet;
 import java.util.LinkedList;
 import java.util.Queue;
 import java.util.Set;
 
-/*
- * Given two words (start and end), and a dictionary,
- *  find the length of shortest transformation sequence from start to end
- *  such that:
- *  1. Only one letter can be changed at a time
- *  2. Each intermediate word must exist in the dictionary
- *  Example: 
- *  Given:
- *  start = "hit"
- *  end = "cog"
- *  dict = ["hot","dot","dog","lot","log"]
- *  As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
- *  return its length 5.
- *  Note:
- *  Return 0 if there is no such transformation sequence.
- *  All words have the same length.
- *  All words contain only lowercase alphabetic characters.
- *  
- *  Analysis: So we quickly realize that this is a search problem, and 
+/**
+ * 120. Word Ladder - Medium - Optional
+
+Given two words (start and end), and a dictionary, 
+find the length of shortest transformation sequence from start to end, such that:
+
+Only one letter can be changed at a time
+Each intermediate word must exist in the dictionary
+ Notice
+Return 0 if there is no such transformation sequence.
+All words have the same length.
+All words contain only lowercase alphabetic characters.
+Have you met this question in a real interview? 
+Example
+Given:
+start = "hit"
+end = "cog"
+dict = ["hot","dot","dog","lot","log"]
+As one shortest transformation is "hit" -> "hot" -> "dot" -> "dog" -> "cog",
+return its length 5.
+
+Tags: LinkedIn Breadth First Search
+
+Related Problems 
+Hard Word Ladder II 20 %
+ * 
+ * */
+/*  Analysis: So we quickly realize that this is a search problem, and 
  *  breath-first search guarantees the optimal solution.
  *  Tried to use DFS to solve this problem, but got the wrong answer.
  *  The reason is for this problem, we need to get the shortest path 

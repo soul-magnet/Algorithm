@@ -1,4 +1,4 @@
-package main.java.ladders.DepthFirstSearch;
+package main.java.ladders.CombinationBasedDFS;
 
 import java.util.List;
 import java.util.Set;

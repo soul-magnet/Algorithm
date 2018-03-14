@@ -1,10 +1,10 @@
-package main.java.ladders.searchAndRecursion;
+package main.java.ladders.CombinationBasedDFS;
 
 import java.util.ArrayList;
 import java.util.List;
 
 /**
- * 52. Combinations - Medium
+ * 52. Combinations - Medium - Required
 
 Given two integers n and k, return all possible combinations of k numbers out of 1 ... n.
 

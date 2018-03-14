@@ -1,4 +1,4 @@
-package main.java.ladders.searchAndRecursion;
+package main.java.ladders.PermutationBasedDFS;
 
 import java.util.ArrayList;
 /**

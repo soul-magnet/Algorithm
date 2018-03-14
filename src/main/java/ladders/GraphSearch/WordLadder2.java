@@ -1,4 +1,5 @@
-package GraphSearch;
+package main.java.ladders.GraphSearch;
+
 
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -9,24 +10,35 @@ import java.util.List;
 import java.util.Map;
 import java.util.Queue;
 import java.util.Set;
+/**
+ * 121. Word Ladder II - Hard - Required
 
-/*
- * Given two words (start and end), and a dictionary, 
- * find all shortest transformation sequence(s) from start to end, 
- * such that:
- * 1. Only one letter can be changed at a time
- * 2. Each intermediate word must exist in the dictionary
- * For example,
- * Given:
- * start = "hit"
- * end = "cog"
- * dict = ["hot","dot","dog","lot","log"]
- * Return
- * [
+Given two words (start and end), and a dictionary, 
+find all shortest transformation sequence(s) from start to end, such that:
+
+Only one letter can be changed at a time
+Each intermediate word must exist in the dictionary
+ Notice
+All words have the same length.
+All words contain only lowercase alphabetic characters.
+
+Example
+Given:
+start = "hit"
+end = "cog"
+dict = ["hot","dot","dog","lot","log"]
+Return
+  [
     ["hit","hot","dot","dog","cog"],
     ["hit","hot","lot","log","cog"]
-   ]
-   
+  ]
+  
+Tags: Backtracking Depth First Search Breadth First Search
+Related Problems 
+Medium Parser 23 %
+Medium Word Ladder 22 %
+ * */
+/*  
    Analysis: The idea is the same. To track the actual ladder, we need to add
    a pointer that points the previous node in the WordNode class.
    
@@ -77,7 +89,7 @@ import java.util.Set;
 	9. The dict in the last test case contains about 3,000 words. 
    
  * */
-public class WordLadderII {
+public class WordLadder2 {
 	/**
      * @param start, a string
      * @param end, a string

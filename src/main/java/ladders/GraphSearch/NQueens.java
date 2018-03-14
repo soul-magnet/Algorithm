@@ -1,14 +1,43 @@
-package GraphSearch;
+package main.java.ladders.GraphSearch;
 
 import java.util.ArrayList;
+/**
+ * 33. N-Queens - Medium - Required
 
-/*
- * The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
- * Given an integer n, return all distinct solutions to the n-queens puzzle.
- * Each solution contains a distinct board configuration of the n-queens' placement, 
- * where 'Q' and '.' both indicate a queen and an empty space respectively.
-*
-* Analysis: classic recursive problem
+The n-queens puzzle is the problem of placing n queens on an n×n chessboard such that no two queens attack each other.
+
+Given an integer n, return all distinct solutions to the n-queens puzzle.
+
+Each solution contains a distinct board configuration of the n-queens' placement, where 'Q' and '.' 
+both indicate a queen and an empty space respectively.
+
+Example
+There exist two distinct solutions to the 4-queens puzzle:
+
+[
+  // Solution 1
+  [".Q..",
+   "...Q",
+   "Q...",
+   "..Q."
+  ],
+  // Solution 2
+  ["..Q.",
+   "Q...",
+   "...Q",
+   ".Q.."
+  ]
+]
+Challenge: Can you do it without recursion?
+
+Tags: Recursion Depth First Search
+
+Related Problems 
+Medium Pacific Atlantic Water Flow 28 %
+Medium Combinations 33 %
+Medium N-Queens II 40 %
+ * */
+/*Analysis: classic recursive problem
 * 1. Use a valid int vector to store the current state, A[i] = j refers that the ith row and
 * jth column is placed a queen
 * 2. Valid state: not tin the same column, which is A[i] != A[current], not in the
