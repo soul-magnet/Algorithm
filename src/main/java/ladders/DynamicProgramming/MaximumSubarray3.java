@@ -29,7 +29,7 @@ Hard Maximum Subarray III 25 %
 Medium Maximum Subarray II 26 %
 Easy Maximum Subarray 38 %
  * */
-public class MaximumSubarrayIII {
+public class MaximumSubarray3 {
 	/**
      * @param nums: A list of integers
      * @param k: An integer denote to find k non-overlapping subarrays
