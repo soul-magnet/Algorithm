@@ -1,4 +1,4 @@
-package matrix;
+package main.java.ladders.Matrix;
 /*
  * Given a boolean 2D matrix, find the number of islands.
  * Example: Given graph:
