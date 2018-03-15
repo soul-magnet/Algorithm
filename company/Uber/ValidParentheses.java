@@ -1,4 +1,4 @@
-package main.java.ladders.String;
+package Uber;
 
 import java.util.Scanner;
 import java.util.Stack;

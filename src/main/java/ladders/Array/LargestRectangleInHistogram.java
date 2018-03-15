@@ -1,4 +1,4 @@
-package Ladder3.DataStructure_II;
+package main.java.ladders.Array;
 
 import java.util.Stack;
 

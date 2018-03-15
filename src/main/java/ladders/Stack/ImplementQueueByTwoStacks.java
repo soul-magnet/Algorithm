@@ -1,4 +1,4 @@
-package main.java.ladders.dataStructure;
+package main.java.ladders.Stack;
 
 import java.util.Stack;
 /**

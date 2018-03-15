@@ -1,4 +1,4 @@
-package main.java.ladders.dataStructure;
+package main.java.ladders.Stack;
 
 /**
  * 12. Min Stack - Medium - Required
