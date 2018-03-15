@@ -27,8 +27,8 @@ Given A = ["cd","dab","ab"], B = ["cc","aaa","dd"], S = "cdab", return "ccdd".
 
 From left to right, you can find the "cd" can be replaced at first, so after the replacement becomes "ccab", 
 then you can find "ab" can be replaced, so the string after the replacement is "ccdd".
-Tags 
-Microsoft
+
+Tags: Microsoft
  * */
 public class StringReplace {
 	/**
