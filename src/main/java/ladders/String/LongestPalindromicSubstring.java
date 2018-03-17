@@ -1,12 +1,27 @@
-package String;
-/*
- * Given a string S, find the longest palindromic substring in S. 
- * You may assume that the maximum length of S is 1000, 
- * and there exists one unique longest palindromic substring.
- * Example: Given the string = "abcdzdcab", return "cdzdc".
- * Challenge: O(n2) time is acceptable. Can you do it in O(n) time.
- * 
- * Analysis: Reverse S and become S'. Find the longest common substring
+package main.java.ladders.String;
+/**
+ * 200. Longest Palindromic Substring - Medium - Required
+ 
+Given a string S, find the longest palindromic substring in S. 
+You may assume that the maximum length of S is 1000, 
+and there exists one unique longest palindromic substring.
+
+Example
+Given the string = "abcdzdcab", return "cdzdc".
+
+Challenge 
+O(n2) time is acceptable. Can you do it in O(n) time.
+
+Tags: String
+
+Related Problems 
+Hard Palindrome Pairs 19 %
+Medium Longest Palindromic Subsequence 43 %
+Easy Valid Palindrome 24 %
+Medium Longest Palindromic Substring 29 %
+Medium Palindrome Partitioning II 23 %
+ * */
+/* Analysis: Reverse S and become S'. Find the longest common substring
  * between S and S', which must also be the longest palindromic substring.
  * 
  * S = "caba" S' = "abac" --> the longest common substring between S and S'
