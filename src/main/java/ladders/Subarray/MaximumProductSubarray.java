@@ -1,6 +1,10 @@
 package main.java.ladders.Subarray;
+
+import java.util.ArrayList;
+
 /**
- * 191. Maximum Product Subarray - Medium - Related
+ * 191. Maximum Product Subarray - Medium - Related(LintCode) 
+ * 152. Maximum Product Subarray  -Medium - (LeetCode)
 
 Find the contiguous subarray within an array (containing at least one number) which has the largest product.
 
@@ -42,5 +46,28 @@ public class MaximumProductSubarray {
 
 		return result;
 	}
+    
+    //MS OTS Variation: Return the maximum product subarray itself
+    public int[] maxPro(int[] nums){
+    	int[] result = new int[nums.length];
+    	
+    	if(nums == null || nums.length == 0) return result;
+    	
+    	//imax/imin stores the max/min product of subarray that ends with the current number nums[i]
+    	int imax = nums[0], imin = nums[0], res = nums[0];
+    	
+    	for(int i = 1; i < nums.length; i++) {
+    		int temp = imax;
+    		imax = Math.max(Math.max(imax * nums[i], imin * nums[i]), nums[i]);
+    		imin = Math.min(Math.min(temp * nums[i], imin * nums[i]), nums[i]);
+    		
+    		if(imax > res) {
+    			res = imax;
+    			result[i] = nums[i]; // double check here
+    		}
+    	}
+    	return result;
+    	
+    }
 
 }
