@@ -1,4 +1,4 @@
-package Microsoft_OTS2018;
+package Microsoft_OTS2018_prep;
 /**LintCode: 41. Maximum Subarray - Modified: Return the maximum subarray itself
    LeetCode 53. Maximum Subarray
    
@@ -49,9 +49,8 @@ public class MaximumSubarray {
      */
     public int maxSubArray1(int[] nums) {
         // write your code
-        //最大子序列为两个定起点序列差值的最大值,
-        //动归: max= max(curent sum- min, max ); min=(min, sum),
-        //动归2: dp[i]=max(dp[i-1]+num[i], num[i]), max=max(max,dp[i]);
+    	//max= max(curent sum- min, max ); min=(min, sum),
+        // dp[i]=max(dp[i-1]+num[i], num[i]), max=max(max,dp[i]);
         if(nums.length==0||nums==null){
             return 0;
         

@@ -3,7 +3,7 @@ package main.java.ladders.BinaryTree;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.Queue;
-
+import main.java.ladders.util.TreeNode;
 
 
 /** 69. Binary Tree Level Order Traversal - Easy

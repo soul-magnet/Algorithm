@@ -1,4 +1,4 @@
-package Microsoft_OTS2018;
+package Microsoft_OTS2018_prep;
 /**3. Longest Substring Without Repeating Characters - LeetCode
  * Given a string, find the length of the longest substring without repeating characters.
 

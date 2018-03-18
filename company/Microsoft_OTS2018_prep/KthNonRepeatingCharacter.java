@@ -1,4 +1,4 @@
-package Microsoft_OTS2018;
+package Microsoft_OTS2018_prep;
 /**
  * K’th Non-repeating Character
  * https://www.geeksforgeeks.org/kth-non-repeating-character/

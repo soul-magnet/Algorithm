@@ -1,4 +1,4 @@
-package Microsoft_OTS2018;
+package Microsoft_OTS2018_prep;
 /** LeetCode: Meeting Room II
  * Given an array of meeting time intervals consisting of start and end times [[s1,e1],[s2,e2],...] (si < ei), 
 find the minimum number of conference rooms required.
@@ -7,6 +7,13 @@ For example: Given [[0, 30],[5, 10],[15, 20]], return 2.
 Tags: Heap Greedy Sort
 Similar Problems: (H) Merge Intervals, (E) Meeting Rooms
  * */
+
+import java.util.ArrayList;
+import java.util.Collections;
+import java.util.Comparator;
+import java.util.List;
+
+import main.java.ladders.util.Interval;
 
 /*
  * Method 1 : PriorityQueue  + a Class to solve. O(nlogn)

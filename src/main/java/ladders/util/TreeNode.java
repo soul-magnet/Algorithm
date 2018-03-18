@@ -11,5 +11,4 @@ public class TreeNode {
 		this.parent = null;
 		
 	}
-
 }

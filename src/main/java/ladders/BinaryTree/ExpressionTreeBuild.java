@@ -1,7 +1,7 @@
 package main.java.ladders.BinaryTree;
 
 import java.util.Stack;
-
+import main.java.ladders.util.ExpressionTreeNode;
 /**
  * 367. Expression Tree Build - Hard - Optional
 
@@ -137,8 +137,7 @@ public class ExpressionTreeBuild {
 * }
 */
 
-
-public class Solution {
+class Solution {
  class TreeNode {
      int val;
      ExpressionTreeNode eNode;
@@ -223,7 +222,7 @@ class TreeNode {
 
 }
 
-public class Solution {
+class Solution1 {
 
 	int get(String a, Integer base) {
 		if (a.equals("+") || a.equals("-"))
