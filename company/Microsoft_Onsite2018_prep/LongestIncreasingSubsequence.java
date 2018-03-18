@@ -6,8 +6,7 @@ Given a sequence of integers, find the longest increasing subsequence (LIS).
 
 You code should return the length of the LIS.
  
-Clarification
-What's the definition of longest increasing subsequence?
+Clarification: What's the definition of longest increasing subsequence?
 
 The longest increasing subsequence problem is to find a subsequence of a given sequence 
 in which the subsequence's elements are in sorted order, lowest to highest, 

@@ -1,4 +1,4 @@
-package MS.OA2017;
+package Microsoft_OTS2017;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -13,7 +13,7 @@ import java.util.List;
  return 2.
  * Created by wtnwi on 1/13/2017.
  */
-public class MeetingRoomsII {
+public class MeetingRooms2 {
     public class Interval {int start, end;
         Interval(int start, int end) {this.start = start;this.end = end;}
     }

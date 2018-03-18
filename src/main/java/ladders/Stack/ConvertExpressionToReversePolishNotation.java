@@ -90,7 +90,7 @@ class TreeNode {
 }
 
 
-public class Solution {
+class Solution {
     /**
      * @param expression: A string array
      * @return: The Reverse Polish notation of this expression
