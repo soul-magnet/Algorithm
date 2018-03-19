@@ -20,8 +20,7 @@ For nums = [1,2,3], the permutations are:
   [3,1,2],
   [3,2,1]
 ]
-Challenge 
-Do it without recursion.
+Challenge: Do it without recursion.
 
 Tags: LinkedIn Recursion
 Related Problems 
