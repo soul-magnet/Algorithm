@@ -1,5 +1,6 @@
 package Microsoft_OTS2018_prep;
 
+import java.util.ArrayList;
 
 /**
  * 191. Maximum Product Subarray - Medium - Related(LintCode) 
@@ -24,7 +25,7 @@ public class MaximumProductSubarray {
      * @param nums: an array of integers
      * @return: an integer
      */
-    public int maxProduct(int[] nums) {
+    public static int maxProduct(int[] nums) {
 		int[] max = new int[nums.length];
 		int[] min = new int[nums.length];
 
@@ -47,10 +48,12 @@ public class MaximumProductSubarray {
 	}
     
     //MS OTS Variation: Return the maximum product subarray itself
-    public int[] maxPro(int[] nums){
-    	int[] result = new int[nums.length];
-    	
+    public static ArrayList<Integer> maxPro(int[] nums){
+    	//int[] result = new int[nums.length];
+    	ArrayList<Integer>result = new ArrayList<Integer>();
     	if(nums == null || nums.length == 0) return result;
+    	
+    	result.addAll(new ArrayList<Integer>());
     	
     	//imax/imin stores the max/min product of subarray that ends with the current number nums[i]
     	int imax = nums[0], imin = nums[0], res = nums[0];
@@ -62,11 +65,27 @@ public class MaximumProductSubarray {
     		
     		if(imax > res) {
     			res = imax;
-    			result[i] = nums[i]; // double check here
+    			result.add(i);
+    			//result[i] = nums[i]; // double check here
     		}
+    		/*for(int j = 0; j < result.size(); j++){
+        		System.out.println(result[j]);
+        	}*/
     	}
+    	
+    	
     	return result;
     	
+    }
+    
+   
+    
+    public static void main (String[] args) {
+    	 
+        int arr[] = {1, -2, -3, 0, 7, -8, -2};
+        
+        System.out.println("Maximum Sub array product is "+ maxProduct(arr));
+        System.out.println("Maximum Sub array product is "+ maxPro(arr));
     }
 
 }

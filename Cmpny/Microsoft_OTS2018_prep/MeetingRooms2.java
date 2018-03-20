@@ -7,12 +7,19 @@ import java.util.PriorityQueue;
 import main.java.ladders.util.Interval;
 
 /**
- * 253. Meeting Rooms II - Medium
+ * 919. Meeting Rooms II - LintCode - Medium
+ * 253. Meeting Rooms II - LeetCode  - Medium
  * 
  * Given an array of meeting time intervals consisting of start and end times 
  * [[s1,e1],[s2,e2],...] (si < ei), find the minimum number of conference rooms required.
 
 	For example, Given [[0, 30],[5, 10],[15, 20]], return 2.
+
+Tags: Sort Greedy Facebook Snapchat Interval Heap Google
+
+Related Problems 
+Easy Meeting Rooms 42 %
+Easy Merge Intervals 22 %
  * */
 /*Analysis: Invariant - Overlapping events in the heap
  * The heap stores all overlapping events. When a new event comes, we greedly choose the event X tht finished the
@@ -52,6 +59,11 @@ public class MeetingRooms2 {
 		public int compare(Interval a, Interval b) {
 			return a.start - b.start;
 		}
+	}
+	
+	public static void main(String args[]){
+		int[] tst1 = {{0, 1}, {1, 2}};
+		
 	}
 
 }

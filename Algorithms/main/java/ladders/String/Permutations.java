@@ -1,4 +1,4 @@
-package String;
+package main.java.ladders.String;
 
 import java.util.ArrayList;
 
