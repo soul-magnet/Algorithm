@@ -213,7 +213,9 @@ class Solution {
 class TreeNode {
  public int val;
 	public String s;
-	public ExpressionTreeNode root; 
+	public ExpressionTreeNode root;
+	public TreeNode left;
+	public TreeNode right; 
 
 	public TreeNode(int val, String ss) {
 		this.val = val;
