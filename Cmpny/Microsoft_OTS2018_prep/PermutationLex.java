@@ -40,33 +40,32 @@ After swapping these two, we get “DEFCBA”. The final step is to sort the substri
 the character original index of ‘first character’. Finally, we get “DEABCF”.
  * */
 public class PermutationLex {
-		
-		
-	
-		public static void main(String[] args) {
-			PermutationLex obj = new PermutationLex();
-			char a[] = { 'A', 'B', 'C' };
-			obj.perm(a, a.length, new ArrayList<Character>(), 0, 
-						new Boolean[] { false, false, false });
+	//DFS - Recursive 	
+	private void perm(char[] a, int len, List<Character> lis, int depth, Boolean[] visited) {
+		if (depth > len)
+			return;
+
+		if (depth == len) {
+			System.out.println(lis.subList(0, len));
+			return;
 		}
 
-		private void perm(char [] a, int len, List<Character> lis, int depth, Boolean[] visited){
-			if(depth > len) return;
-
-			if(depth == len){
-				System.out.println(lis.subList(0, len));
-				return;
-			}
-
-			for(int i =0; i<len; i++){
-				if(!visited[i]){
-					lis.add(depth,a[i]);
-					visited[i]= true; 
-					perm(a, len, lis, depth+1,visited);
-					visited[i]=false;
-				}
+		for (int i = 0; i < len; i++) {
+			if (!visited[i]) {
+				lis.add(depth, a[i]);
+				visited[i] = true;
+				perm(a, len, lis, depth + 1, visited);
+				visited[i] = false;
 			}
 		}
+	}
+
+	public static void main(String[] args) {
+		PermutationLex inst = new PermutationLex();
+		char a[] = { 'A', 'B', 'C' };
+		inst.perm(a, a.length, new ArrayList<Character>(), 0, new Boolean[] { false, false, false });
+	}
+
 	
 	
 }

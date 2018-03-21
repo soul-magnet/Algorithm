@@ -1,6 +1,7 @@
 package Microsoft_OTS2018_prep;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 
 /**
  * 191. Maximum Product Subarray - Medium - Related(LintCode) 
@@ -47,6 +48,51 @@ public class MaximumProductSubarray {
 		return result;
 	}
     
+    //Another version
+    public int maxProduct1(int[] nums) {
+       int max = Integer.MIN_VALUE;    // global max
+       int maxloc = 1, minloc = 1;     // max or min end here
+       for (int num : nums) {          // negative could cause maxloc and minloc swap
+           int prod1 = maxloc * num, prod2 = minloc * num;
+           maxloc = Math.max(num, Math.max(prod1, prod2));
+           minloc = Math.min(num, Math.min(prod1, prod2));
+           max = Math.max(max, maxloc);
+       }
+       return max; 
+       
+   }
+    
+    public static int[] maxPro1(int[] nums) {
+    	int[] result = new int[nums.length];
+    	int begin = 0, end = 0;
+    	int max = Integer.MIN_VALUE;
+    	int maxLoc = 1, minLoc = 1;
+    	for(int i = 0; i < nums.length; i++) {
+    		int prod1 = Math.max(maxLoc, nums[i]);
+    		int prod2 = Math.max(minLoc, nums[i]);
+    		maxLoc = Math.max(nums[i], Math.max(prod1, prod2));
+    		minLoc = Math.max(nums[i], Math.max(prod1, prod2));
+    		max = Math.max(max, maxLoc);
+    		if(max == maxLoc) {
+    			end = i;
+    		}
+    	}
+    	return Arrays.copyOfRange(nums, begin, end+1);
+    }
+    
+    static int arr[] = {1, -2, -3, 0, 7, -8, -2};
+    public static void subArray(int n) {
+    	for(int i = 0; i < n; i++) {
+    		for(int j=i; j<n; j++){
+    			//print subarray between current starting and ending points
+    			for(int k=i; k <= j; k++) {
+    				System.out.println(arr[k] + "");
+    			}
+    		}
+    	}
+    }
+    
+ 
     //MS OTS Variation: Return the maximum product subarray itself
     public static ArrayList<Integer> maxPro(int[] nums){
     	//int[] result = new int[nums.length];
@@ -83,9 +129,12 @@ public class MaximumProductSubarray {
     public static void main (String[] args) {
     	 
         int arr[] = {1, -2, -3, 0, 7, -8, -2};
-        
-        System.out.println("Maximum Sub array product is "+ maxProduct(arr));
-        System.out.println("Maximum Sub array product is "+ maxPro(arr));
+       
+        //System.out.println("Maximum Sub array product is "+ maxProduct(arr));
+        System.out.println("Maximum Sub array product is "+ maxPro1(arr));
+        System.out.println("All Non-empty Subarrays");
+        subArray(arr.length);
+       
     }
 
 }
