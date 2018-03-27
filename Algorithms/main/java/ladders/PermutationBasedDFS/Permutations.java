@@ -1,6 +1,7 @@
 package main.java.ladders.PermutationBasedDFS;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
 import java.util.List;
 
 /**15. Permutations - Medium - Required
@@ -57,7 +58,8 @@ public class Permutations {
 	
 	///////////////////////////////////////////////////////////
 	//Iterative Approach
-	public static List<List<Integer>>permute1(int[] nums){
+	//throwing indexoutofbound exception
+	/*public static List<List<Integer>>permute1(int[] nums){
 		List<List<Integer>>result = new ArrayList<List<Integer>>();
 		if(nums.length == 0) return result;
 		result.add(new ArrayList<Integer>());
@@ -74,7 +76,25 @@ public class Permutations {
 		}
 		
 		return result;
-	}
+	}*/
+	
+	public static List<List<Integer>> permute1(int[] num) {
+	       LinkedList<List<Integer>> res = new LinkedList<List<Integer>>();
+	        res.add(new ArrayList<Integer>());
+	        for (int n : num) {
+	            int size = res.size();
+	            for (; size > 0; size--) {
+	                List<Integer> r = res.pollFirst();
+	                for (int i = 0; i <= r.size(); i++) {
+	                    List<Integer> t = new ArrayList<Integer>(r);
+	                    t.add(i, n);
+	                    res.add(t);
+	                }
+	            }
+	        }
+	        return res;
+	        
+	    }
 	
 	public static void main(String args[]){
 		int[] nums = {1, 2, 3};
@@ -83,5 +103,4 @@ public class Permutations {
 		System.out.println("iterative" + permute1(nums));
 	}
 	
-
 }

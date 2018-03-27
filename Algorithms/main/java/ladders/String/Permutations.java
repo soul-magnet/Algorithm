@@ -1,12 +1,16 @@
 package main.java.ladders.String;
 
 import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.List;
+/**15. Permutations - Medium - Required
 
-/*
- * Given a list of numbers, return all possible permutations.
- * Have you met this question in a real interview? Yes
- * Example
- * For nums = [1,2,3], the permutations are:
+Given a list of numbers, return all possible permutations.
+
+ Notice: You can assume that there is no duplicate numbers in the list.
+
+Example
+For nums = [1,2,3], the permutations are:
 
 [
   [1,2,3],
@@ -16,97 +20,85 @@ import java.util.ArrayList;
   [3,1,2],
   [3,2,1]
 ]
+Challenge: Do it without recursion.
 
-Analysis: 
-Fixing characters in certain position & determining permutation in rest
-- Formalize the process:
-- Choose the first character 
-- Obtain all permutations with first character fixed 
-	- Choose second character
-	- Obtain all permutations with first and second character fixed --> Recursion
-- Choosing characters;
-- Character picked in previous recursion cannot be choosen again
-- Scan previous chosen character 
+Tags: LinkedIn Recursion
+Related Problems 
+Medium Print Numbers by Recursion 26 %
+Medium Permutation Sequence 28 %
+Medium Permutations II 26 %*/
 
-Algorithm:
-
-If we picked all the characters in string
-	print permutation
-else 
-	for each character in string 
-		if character already used
-			skip character
-		else 
-			place character in current position
-			mark character as used
-			permute remaining characters starting from position + 1
-			unmark character
-*/
-
-//Challenge
-//Do it without recursion.
-
-// First version is Recursion 
-// Second version is Iterative
 public class Permutations {
-	// Recursion 
-	/*public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums){
-		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-		if (nums == null || nums.size() == 0){
-			return result;
-		}
-		
-		helper(nums, result, new ArrayList<Integer>());
+	/*
+	 * @param nums: A list of integers
+	 * @return: A list of permutations
+	 * */
+	//Recursive Approach - easy to implement but harder to think how recursive is actually happening
+	//permutation is n! = 3! = 6
+	public static List<List<Integer>> permute(int[] nums) {
+		//Write your code here
+		List<List<Integer>>result = new ArrayList<>();
+		dfs(result, new ArrayList<Integer>(), nums);
 		return result;
-		
-		
 	}
 	
-	public void helper(ArrayList<Integer> nums, ArrayList<ArrayList<Integer>> result, ArrayList<Integer>cur){
-		if (cur.size() == nums.size()) {
-			result.add(new ArrayList<Integer>(cur));
-			return;
-		}
-		
-		for (int j = 0; j < nums.size(); j++) {
-			if (cur.contains(nums.get(j))){
-				continue;
+	public static void dfs(List<List<Integer>>result, List<Integer>tempList, int[]nums){
+		if(tempList.size() == nums.length){
+			result.add(new ArrayList<>(tempList));
+		}else{
+			for(int i = 0; i < nums.length; i++){
+				if(tempList.contains(nums[i])) continue; //element is already exist, skip
+				tempList.add(nums[i]);
+				dfs(result, tempList, nums);
+				tempList.remove(tempList.size()-1);
 			}
-			cur.add(nums.get(j));
-			helper(nums, result, cur);
-			cur.remove(cur.size() - 1);
 		}
-	}*/
+	}
 	
-	// Iterative
-	public ArrayList<ArrayList<Integer>> permute(ArrayList<Integer> nums){
-		ArrayList<ArrayList<Integer>> result = new ArrayList<ArrayList<Integer>>();
-		if (nums == null || nums.size() == 0) {
-			return result;
-		}
-		
-		// start from an empty list
+	///////////////////////////////////////////////////////////
+	//Iterative Approach
+	//throwing indexoutofbound exception
+	/*public static List<List<Integer>>permute1(int[] nums){
+		List<List<Integer>>result = new ArrayList<List<Integer>>();
+		if(nums.length == 0) return result;
 		result.add(new ArrayList<Integer>());
-		
-		// add nums[i] to all positions of each list in the current result => new result
-		for (int i = 0; i < nums.size(); i++) {
-			ArrayList<ArrayList<Integer>> nextResult = new ArrayList<ArrayList<Integer>>();
-			
-			// for each list L in the result
-			for (ArrayList<Integer> l : result){
-				// insert num[i] from ) to L.size()
-				for (int j = 0; j < l.size() + 1; j++){
-					l.add(j, nums.get(i));
-					ArrayList<Integer> temp = new ArrayList<Integer>(l);
-    				nextResult.add(temp); //add the new list to the next result.
-    				l.remove(j);
+		for(int i = 0; i < nums.length; i++){
+			List<List<Integer>>tempList = new ArrayList<List<Integer>>();
+			for(int j = 0; i <= i; j++){
+				for(List<Integer>l : result){
+					List<Integer>newList = new ArrayList<Integer>(l);
+					newList.add(nums[i]);
+					tempList.add(newList);
 				}
 			}
-			result = nextResult;
+			result = tempList;
 		}
 		
 		return result;
+	}*/
+	
+	public static List<List<Integer>> permute1(int[] num) {
+	       LinkedList<List<Integer>> res = new LinkedList<List<Integer>>();
+	        res.add(new ArrayList<Integer>());
+	        for (int n : num) {
+	            int size = res.size();
+	            for (; size > 0; size--) {
+	                List<Integer> r = res.pollFirst();
+	                for (int i = 0; i <= r.size(); i++) {
+	                    List<Integer> t = new ArrayList<Integer>(r);
+	                    t.add(i, n);
+	                    res.add(t);
+	                }
+	            }
+	        }
+	        return res;
+	        
+	    }
+	
+	public static void main(String args[]){
+		int[] nums = {1, 2, 3};
+		System.out.println("recursive" + permute(nums));
+		
+		System.out.println("iterative" + permute1(nums));
 	}
-	
-	
 }
