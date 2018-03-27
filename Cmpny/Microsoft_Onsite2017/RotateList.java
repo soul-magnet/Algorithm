@@ -1,6 +1,6 @@
-package MS.Onsite2017;
+package Microsoft_Onsite2017;
 
-import list.ListNode;
+import main.java.ladders.util.ListNode;
 
 /**Given a list, rotate the list to the right by k places, where k is non-negative.
 
