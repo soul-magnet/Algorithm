@@ -1,5 +1,6 @@
 package main.java.ladders.DepthFirstSearch;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**15. Permutations - Medium - Required
@@ -34,6 +35,17 @@ public class Permutations {
      */
     public List<List<Integer>> permute(int[] nums) {
     	//Write your code here
+    	List<List<Integer>>result = new ArrayList<List<Integer>>();
+    	if(nums == null || nums.length == 0) return result;
+    	dfs(result, new ArrayList<>(), nums);
+    	return result;
+    }
+    
+    private void dfs(List<List<Integer>>result, ArrayList<Integer> tempList, int[] nums){
+    	if(tempList.size() == nums.length){
+    		result.add(new ArrayList<Integer>(tempList));
+    	}
+    	
     }
 
 }
