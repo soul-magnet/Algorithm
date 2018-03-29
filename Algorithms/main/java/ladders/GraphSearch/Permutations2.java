@@ -3,6 +3,11 @@ package main.java.ladders.GraphSearch;
 import java.util.ArrayList;
 import java.util.Collections;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.List;
+
 /**
  * 16. Permutations II - Medium - Required
 
@@ -18,8 +23,8 @@ Example: For numbers [1,2,2] the unique permutations are:
 
 Challenge: Using recursion to do it is acceptable. If you can do it without recursion, that would be great!
 
-Tags 
-Recursion LinkedIn Depth First Search
+Tags: Recursion LinkedIn Depth First Search
+
 Related Problems 
 Medium Next Permutation II 34 %
 Medium Permutation Sequence 28 %
@@ -27,20 +32,50 @@ Medium Next Permutation 25 %
 Medium Permutations 28 %
  * 
  * */
+
+//
+/* Analysis: DFS -Backtracking - Recursion Tree
+ * What do I need?
+ * 1. Result List
+ * 2. tempList, keeps the current permutation until the count of each index equal 0
+ * 3. visited boolean value
+ * 
+ * main trick: if(visited[i] || i > 0 && nums[i] == nums[i-1] && visited[i-1] ) //gives ascending order
+ * 			   if(visited[i] || i > 0 && nums[i] == nums[i-1] && !visited[i-1] ) //gives descending order
+ *             Both are working the difference is while ordering, ascending or descending order
+ *             
+ * https://www.youtube.com/watch?v=nYFd7VHKyWQ&list=PLrmLmBdmIlpslxZUHHWmfOzNn6cA7jvyh - recursion tree explanation
+ * https://github.com/mission-peace/interview/blob/master/src/com/interview/recursion/StringPermutation.java					
+ * */
 public class Permutations2 {
 	/**
-	 * dfs: int[i] is unique id for each num,
-	 * iterate throught i to end
-	 * backtrack if when generate a list size == nums size, add list to res
-	 * for each layer, interate throught 0 to the end, use visted[num.size] to
-	 * determine if the id visited not to be added
-	 * then update visited[] for current id, dfs, backtrack remove id from
-	 * visited[] and remove id from list[]
-	 *
-	 * @param nums
-	 *            : A list of integers.
-	 * @return: A list of unique permutations.
+	 *  @param nums : A list of integers.
+	 *  @return: A list of unique permutations.
 	 */
+	//LeetCode Version
+	public List<List<Integer>> permuteUnique(int[] nums){
+		List<List<Integer>>result = new ArrayList<>();
+		Arrays.sort(nums); //lexicographically sorted
+		dfs(result, new ArrayList<Integer>(), nums, new boolean[nums.length]);
+		return result;
+	}
+	
+	private void dfs(List<List<Integer>>result, ArrayList<Integer>tempList,int[] nums, boolean[] visited) {
+		if(tempList.size() == nums.length) {
+			result.add(new ArrayList<Integer>(tempList));
+			return;
+		}
+		for(int i = 0; i < nums.length; i++) {
+			if(visited[i] || i > 0 && nums[i] == nums[i-1] && visited[i-1]) continue; //skip duplicate permutations
+			tempList.add(nums[i]);
+			visited[i] = true;
+			dfs(result, tempList, nums, visited);
+			tempList.remove(tempList.size()-1);
+			visited[i] = false;
+		}
+	}
+	
+	//LintCode Version
 	public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
 		ArrayList<ArrayList<Integer>> resArrayList = new ArrayList<ArrayList<Integer>>();
 		if (nums == null || nums.size() == 0) {
