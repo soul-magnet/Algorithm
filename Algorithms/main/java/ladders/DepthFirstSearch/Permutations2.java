@@ -29,18 +29,10 @@ Medium Permutations 28 %
  * */
 public class Permutations2 {
 	/**
-	 * dfs: int[i] is unique id for each num,
-	 * iterate throught i to end
-	 * backtrack if when generate a list size == nums size, add list to res
-	 * for each layer, interate throught 0 to the end, use visted[num.size] to
-	 * determine if the id visited not to be added
-	 * then update visited[] for current id, dfs, backtrack remove id from
-	 * visited[] and remove id from list[]
-	 *
-	 * @param nums
-	 *            : A list of integers.
-	 * @return: A list of unique permutations.
+	 *  @param nums : A list of integers.
+	 *  @return: A list of unique permutations.
 	 */
+	
 	public ArrayList<ArrayList<Integer>> permuteUnique(ArrayList<Integer> nums) {
 		ArrayList<ArrayList<Integer>> resArrayList = new ArrayList<ArrayList<Integer>>();
 		if (nums == null || nums.size() == 0) {
