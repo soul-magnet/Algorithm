@@ -2,10 +2,7 @@ package main.java.ladders.String;
 
 import java.util.ArrayList;
 import java.util.Collections;
-
-import java.util.ArrayList;
 import java.util.Arrays;
-import java.util.Collections;
 import java.util.List;
 
 /**
@@ -66,7 +63,7 @@ public class Permutations2 {
 			return;
 		}
 		for(int i = 0; i < nums.length; i++) {
-			if(visited[i] || i > 0 && nums[i] == nums[i-1] && visited[i-1]) continue; //skip duplicate permutations
+			if(visited[i] || i > 0 && nums[i] == nums[i-1] && visited[i-1]) continue; //skip duplicate permutations; same with (visited[i] || i > 0 && nums[i] == nums[i-1] && !visited[i-1])
 			tempList.add(nums[i]);
 			visited[i] = true;
 			dfs(result, tempList, nums, visited);
