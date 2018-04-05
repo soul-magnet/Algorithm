@@ -12,7 +12,7 @@ The matching should cover the entire input string (not partial).
 
 The function prototype should be:
 bool isMatch(string s, string p)
-Have you met this question in a real interview? 
+ 
 Example
 isMatch("aa","a") → false
 isMatch("aa","aa") → true
@@ -21,8 +21,9 @@ isMatch("aa", "a*") → true
 isMatch("aa", ".*") → true
 isMatch("ab", ".*") → true
 isMatch("aab", "c*a*b") → true
-Tags 
-String Backtracking Dynamic Programming Facebook Google
+
+Tags: String Backtracking Dynamic Programming Facebook Google
+
 Related Problems 
 Hard Wildcard Matching 26 %
 */
@@ -33,6 +34,22 @@ public class RegularExpressionMatching {
      * @param p: A string includes "." and "*"
      * @return: A boolean
      */
+	
+	//Version 1: Recursive - backtracking
+	public boolean isMatch(String s, String p) {
+		return dp(0, s, 0, p);
+	}
+	
+	private boolean dp(int i, String  s, int j, String p) {
+		int pn = p.length(), sn = s.length();
+		if( j == pn) return i == sn;
+		if(p.charAt(j + 1) == '*') {
+			if(dp(i, s, j+2, p)) return true;
+			while(i < sn && (p.charAt(j) == s.charAt(i) || p.charAt(j) == '.')) if(dp(++i, s, j+2, p)) return true;
+		}else if(i<sn && (p.charAt(j) == '.' || s.charAt(i) == p.charAt(j)) && dp(i+1, s, j+1, p)) return true;
+		
+		return 
+	}
     public boolean isMatch(String s, String p) {
         // base case
         if (p.length() == 0) {
